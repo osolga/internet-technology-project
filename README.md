@@ -1,6 +1,7 @@
 # internet-technology-project
+FT2a Group 1
 Team member
-1. Jonas
-2. Olga
-3. Sven
-4. Thitari
+1. Jonas   Hainmüller
+2. Olga    Osipova
+3. Sven    Herzig
+4. Thitari Somboon
