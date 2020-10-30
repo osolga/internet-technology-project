@@ -9,6 +9,47 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            padding: 90px 0 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            z-index: 99;
+        }
+
+        @media (max-width: 767.98px) {
+            .sidebar {
+                top: 11.5rem;
+                padding: 0;
+            }
+        }
+            
+        .navbar {
+            box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .1);
+        }
+
+        @media (min-width: 767.98px) {
+            .navbar {
+                top: 0;
+                position: sticky;
+                z-index: 999;
+            }
+        }
+
+        .sidebar .nav-link {
+            color: #333;
+        }
+
+        .sidebar .nav-link.active {
+            color: #0d6efd;
+        }
+    </style>    
 
 </head>
 <body>
@@ -117,14 +158,167 @@
 
                 <h1 class="h2">Dashboard</h1>
                 <p>Admin Homepage</p>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                         <div class="card">
+                             <h5 class="card-header">Customers</h5>
+                             <div class="cardbody">
+                                 <h5 class="card-title">345k</h5>
+                                 <p class="card-text">Jul 1 - Sep 1, Switzerland</p>
+                                 <p class="card-text text-sucess">18.2% increase since last month</p>
+                             </div>
+                         </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">Revenue</h5>
+                            <div class="cardbody">
+                                <h5 class="card-title">2.4k</h5>
+                                <p class="card-text">Sep 1 - Dec 1, Switzerland</p>
+                                <p class="card-text text-danger">4.6% decrease since last month</p>
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">Purchases</h5>
+                            <div class="cardbody">
+                                <h5 class="card-title">2.4k</h5>
+                                <p class="card-text">Sep 1 - Dec 1, Switzerland</p>
+                                <p class="card-text text-sucess">2.1% increase since last month</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">Traffic</h5>
+                            <div class="cardbody">
+                                <h5 class="card-title">14k</h5>
+                                <p class="card-text">Sep 1 - Dec 1, Switzerland</p>
+                                <p class="card-text text-sucess">1.5% increase since last month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                        <div class="card">
+                            <h5 class="card-header">Latest transaction</h5>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Order</th>
+                                                <th scope="col">Products</th>
+                                                <th scope="col">Customers</th>
+                                                <th scope="col">Total</th>
+                                                <th scope="col">Date</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"> 00001</th>
+                                                <td>2x Corona beers</td>
+                                                <td>thitari.weibel@gmail.com</td>
+                                                <td>15CHF</td>
+                                                <td>20 Oct 2020</td>
+                                                <td><a href="#" class="btn btn-sm btn-primanry">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"> 00001</th>
+                                                <td>2x Corona beers</td>
+                                                <td>thitari.weibel@gmail.com</td>
+                                                <td>15CHF</td>
+                                                <td>20 Oct 2020</td>
+                                                <td><a href="#" class="btn btn-sm btn-primanry">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"> 00001</th>
+                                                <td>2x Corona beers</td>
+                                                <td>thitari.weibel@gmail.com</td>
+                                                <td>15CHF</td>
+                                                <td>20 Oct 2020</td>
+                                                <td><a href="#" class="btn btn-sm btn-primanry">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"> 00001</th>
+                                                <td>2x Corona beers</td>
+                                                <td>thitari.weibel@gmail.com</td>
+                                                <td>15CHF</td>
+                                                <td>20 Oct 2020</td>
+                                                <td><a href="#" class="btn btn-sm btn-primanry">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"> 00001</th>
+                                                <td>2x Corona beers</td>
+                                                <td>thitari.weibel@gmail.com</td>
+                                                <td>15CHF</td>
+                                                <td>20 Oct 2020</td>
+                                                <td><a href="#" class="btn btn-sm btn-primanry">View</a></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"> 00001</th>
+                                                <td>2x Corona beers</td>
+                                                <td>thitari.weibel@gmail.com</td>
+                                                <td>15CHF</td>
+                                                <td>20 Oct 2020</td>
+                                                <td><a href="#" class="btn btn-sm btn-primanry">View</a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <a href="#" class="btn btn-block btn-light">View All</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xl-4">
+                        <div class="card">
+                            <h5 class="card-header">Traffic last 3 months</h5>
+                            <div class="card-body">
+                                <div id="traffic-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="pt-5 d-flex justify-content-between">
+                    <span>Copyright © 2019-2020 <a href="#">Bear Belly Bar</a></span>
+                    <ul class="nav m-0">
+                        <li class="nav-item">
+                          <a class="nav-link text-secondary" aria-current="page" href="#">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-secondary" href="#">Terms and conditions</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link text-secondary" href="#">Contact</a>
+                        </li>
+                      </ul>
+                </footer>   
             </main>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
     <script>
         feather.replace()
+        new Chartist.Line('#traffic-chart', {
+            labels: ['Jul', 'Aug', 'Sep'],
+            series: [
+                [ 25000, 19050, 41002]
+            ]
+        },{
+            low: 0,
+            showArea: true
+        });
       </script>
 </body>
 </html>
