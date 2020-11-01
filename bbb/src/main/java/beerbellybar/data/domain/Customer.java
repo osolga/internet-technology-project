@@ -2,7 +2,6 @@ package beerbellybar.data.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
