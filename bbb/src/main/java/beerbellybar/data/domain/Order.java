@@ -20,5 +20,15 @@ public class Order {
     @JsonIgnore
     private List<MenuItem> menuItems;
 
-    // getters and setter due
+    public Long getId() {return id;}
+
+    public void setId(Long id) {this.id = id;}
+
+    public String getOrderTime() {return orderTime;}
+
+    public void setOrderTime(String orderTime) {this.orderTime = orderTime;}
+
+    public List<MenuItem> getMenuItems() {return menuItems;}
+
+    public void setMenuItems(List<MenuItem> menuItems) {this.menuItems = menuItems;}
 }

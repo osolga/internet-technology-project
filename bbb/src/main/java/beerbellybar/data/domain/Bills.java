@@ -25,5 +25,27 @@ public class Bills {
     @JsonIgnore
     private Customer customer;
 
-    //getters and setter still due
+    public Long getId() {return id;}
+
+    public void setId(Long id) {this.id = id;}
+
+    public Double getTab_amount() {return tab_amount;}
+
+    public void setTab_amount(Double tab_amount) {this.tab_amount = tab_amount;}
+
+    public Double getDiscount() {return discount;}
+
+    public void setDiscount(Double discount) {this.discount = discount;}
+
+    public List<Order> getOrder() {return order;}
+
+    public void setOrder(List<Order> order) {this.order = order;}
+
+    public Admin getAdmin() {return admin;}
+
+    public void setAdmin(Admin admin) {this.admin = admin;}
+
+    public Customer getCustomer() {return customer;}
+
+    public void setCustomer(Customer customer) {this.customer = customer;}
 }
