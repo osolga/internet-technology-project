@@ -16,7 +16,7 @@ public class Admin {
 
     public Long getId() {return id;}
 
-    public void setID(Long id) {this.id = id;}
+    public void setId(Long id) {this.id = id;}
 
     public String getPassword() {
         String transientPassword = this.password;

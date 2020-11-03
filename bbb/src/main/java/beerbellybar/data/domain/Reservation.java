@@ -22,7 +22,7 @@ public class Reservation {
 
     public Long getId() {return id;}
 
-    public void setID(Long id) {this.id = id;}
+    public void setId(Long id) {this.id = id;}
 
     public Integer getNumPeople() {return numPeople;}
 
