@@ -45,4 +45,27 @@ img{
     .sp-wrap {
       padding: 0;
     }
+    #BBB-header{
+        font-size: 20px;
+    }
+    #Sign-in{
+        font-size: 16px
+    }
+
+    #username{
+        font-size: 12px;
+    }
+    #password{
+        font-size: 12px;
+    }
+    #btnLogin{
+        font-size: 12px;
+    }
+    #rememberCheckbox{
+        font-size: 10px;
+    }
+    #forgotPW{
+        font-size: 10px;
+    }
   }
+
