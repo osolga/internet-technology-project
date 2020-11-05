@@ -35,3 +35,7 @@
   .sidebar .nav-link.active {
     color: #0d6efd;
   }
+
+  #logo-small {
+    width: 30%;
+  }
