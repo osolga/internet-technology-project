@@ -1,0 +1,35 @@
+#menuPic{
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+#logoMenu {
+    margin:0px 0 0 0px;
+}
+
+
+#description-3{
+    padding-top: 100px;
+}
+
+@media screen and (max-width: 400px){
+
+    #text-info{
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #logoMenu {
+    margin: 10px 0 0 125px;
+    width: 25%;
+    }
+}
+
+@media screen and (max-width: 812px){
+    #text-info{
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
