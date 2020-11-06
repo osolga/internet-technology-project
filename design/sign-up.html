@@ -20,28 +20,28 @@
     </div>
 
   <section class="Form my-5 mx-5">
-    <div class="container">
+    <div class="container-md">
       <div class="row justify-content-md-center">
         <div class="col-md-auto">
           <h2 class="text-center">Create an Account</h2>
           <br>
-          <p class="text-center">Already have an account? <a href="#"> Sign in</a> </p>
+          <p class="text-center">Already have an account? <a href="admin-login.html"> Sign in</a></p>
         </div>
-       <!--
-        <div id="Social-account" class="container">
+      
+        <!--<div id="Social-account" class="container">
           <div class="row">
             <div class="col-sm-center border bg-light">
-                <button type="FB-button" class="btn btn-light"><img id="FB-logo" src="assets/img/img-front-page/img-SignUp-page/FB-Logo.png"><a target="_top" href="https://www.facebook.com">Facebook</a></button>
+              <button id ="FB-logo" type="button" class="btn btn-outline-light"><img src="assets/img/img-front-page/img-SignUp-page/FB-Logo.PNG" alt="">Facebook</button>
            
             <div class="col-sm-center border bg-light">
-              <button type="Gmail-button" class="btn btn-light"><img id="Gmail-logo" src="assets/img/img-front-page/img-SignUp-page/Gmail-Logo.png"><a target="_top" href="https://gmail.com/">Google</a></button>
+              <button type="Gmail-button" class="btn btn-light"><img id="Gmail-logo" src="assets/img/img-front-page/img-SignUp-page/Gmail-Logo.png"><a href="https://gmail.com/">Google</a></button>
             </div>  
             </div>  
         </div>
           <br>
           <p class="text-center">Or Create with</p>
-        </div>
-      -->
+        </div>-->
+      
         <form id="" method="POST" enctype="application/x-www-form-urlencoded">
           <div id="create-email-input">
             <fieldset class="form-group">
@@ -110,10 +110,10 @@
               <div id="password-container">
                 <div class="ux-criteria-connect">
                   <fieldset class="form-group">
-                    <label for="new-password" id="label-new-password">Password </label>
-                    <div class="pull-right">
-                      <a class="btn btn-tertiary-inline btn-sm" aria-label="form_action_button"><div class="text-primary-o" tabindex="0">Show</div>
-                      </a></div>
+                    <label for="new-password" id="label-new-password">Password</label>
+                      <div class="pull-right">
+                      <a class="btn btn-tertiary-inline btn-sm" aria-label="form_action_button">
+                        <div class="text-primary-o" tabindex="0">Show</div></a></div>
                   
                   <div style="position: relative; width: 100%;">
                     <input tabindex="" id="new-password" type="password" aria-labelledby="label-new-password" aria-required="false" class="form-control" value="" data-valid="true">
@@ -146,11 +146,12 @@
                             <p>I want to receive personalized offers, updates, and information about Bear Belly Bar products and services.</p>
                             
                             <div class="ux-btn-set ux-btn-block ux-btn-split" role="group">
-                              <button tabindex="0" class="btn btn-purchase ux-btn-set-item" id="consent-accept-button" type="button">Agree</button>
-                              
+                              <input type="checkbox" id="agree" value="">
+                                <button tabindex="0" class="btn btn-purchase ux-btn-set-item" id="consent-accept-button" type="button">Agree</button>
+                              <input type="checkbox" id="decline" value="">
                               <button tabindex="0" class="btn btn-default-purchase ux-btn-set-item" id="consent-decline-button" type="button">Decline</button></div></div></div></div>
                               
-                              <button id="btnCreateAcc" type="button" class="btn1 mt-3 mb-2">Create Account</button>
+                              <button id="btnCreateAcc" type="button" class="btn1 mt-3 mb-3">Create Account</button>
                               <br>
                               
                               <div id="create_acct_submit_btn_container"><p class="tos-text">By creating an account, you agree to BearBellyBar's <a target="_blank" id="tos-link" href="#">Terms &amp; Conditions </a> and <a target="_blank" id="privacy-link" href="#">Privacy Policy</a></p></div></form>

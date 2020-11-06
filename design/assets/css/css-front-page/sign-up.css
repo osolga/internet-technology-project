@@ -38,12 +38,12 @@ body {
     column-width: 200px;
 }
 #logo {
-    padding-top: 10px;
+    padding-top: 50px;
     padding-bottom: 10px;
   }
 
 #FB-logo{
-    width: 25%;
+    width: 20%;
     padding-right: 15px;
 }
 
@@ -75,7 +75,7 @@ body {
        margin: 10px 0 0 145px;
     }
     #FB-logo{
-           width: 50px;
+           width: 20%;
            padding-right: 10px;
     }
     

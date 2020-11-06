@@ -14,6 +14,8 @@ body{
 }
 
 img{
+    height: auto;
+    max-width: 100%;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 }
@@ -77,6 +79,7 @@ img{
 
   @media screen and (max-width: 768px), (max-width: 812px) {
     img{
+        
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
         border-bottom-left-radius: 0px;
