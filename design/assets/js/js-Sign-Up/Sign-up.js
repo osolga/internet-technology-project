@@ -22,3 +22,22 @@
         }, false)
       })
   })()
+
+
+
+/*
+ (function showPassword() {
+    var x = document.getElementById("newPassword");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  })()
+
+var myInput = document.getElementById("psw");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+ */
