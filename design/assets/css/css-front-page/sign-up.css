@@ -1,95 +1,101 @@
-body {
-    margin: 0;
-    font-family: Montserrat,Helvetica,Arial,sans-serif;
-    font-size: 1rem;
-    font-weight: var(--bxjxgl,500);
-    line-height: 1.5rem;
-    color: #111;
-    text-align: left;
-    background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
-
-.ux-card {
-    border-radius: 4px;
-    margin: 0 0 1.25rem;
-    color: #111;
-    border: 1px solid #d4dbe0;
-}
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: .0625rem solid #d4dbe0;
-    margin-bottom: 1.25rem;
-}
-.ux-app {
-    background-color: #f5f7f8;
-    color: #444;
-}
-
-#Facebook{
-    column-width: 200px;
-}
-#logo {
-    padding-top: 50px;
-    padding-bottom: 10px;
+html, body {
+    height: 100%;
+    width: 100%;
   }
 
-#FB-logo{
-    width: 20%;
-    padding-right: 15px;
+<!--CreateAccount-->
+h1{   
+    color: black;
+     font-weight: bolder;
 }
 
-#Gmail-logo{
-    width: 14%;
-    padding-right: 15px;
+footer{
+    background-color:#929292ab;
+    padding: 10px;
 }
 
-.btn1{
-    border: none;
-    outline: none;
-    height: 50px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    border-radius: 3px;
+
+input[type=text], [type=password], [type=email], [type=date], [type=number]
+{
+    display: -webkit-inline-box;
+    background-color:  #cab9f1;
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+}
+#state, #title, #inputGroupPrepend, #gender{
+    display: block;
+    background-color:  #cab9f1;
 }
 
-.btn1:hover{
-   background-color: rgb(179, 177, 177);
-   border: 1px solid;
-   color: black; 
-   font-weight: bold;
+
+.container-sm{
+    padding: 20px;
 }
 
-@media screen and (max-width: 400px){
+main{
+    padding-bottom: 20px;
+}
+
+
+
+label{
+color:black;
+font-weight: bolder;
+font-size: 22px;
+}
+
+#Terms{
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
+
+#logo{
+    padding-top: 20px;
+    width: 5%;
+}
+
+.footer-copyright{
+    padding-top: 30px;
+}
+
+.page-footer{
+    padding: 50px;
+}
+
+
+
+@media screen and (max-width: 740px){
+  
+    h1{
+       font-size: 30px;
+    } 
+
+  label{
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    input{
+        font-size: 12px;
+    }
+
+    #main{
+        padding: 50px;
+    }
+
+    #Terms{
+        font-size: 10px;
+        font-weight: normal;
+    }
+
     #logo{
-       width: 30%;
-       margin: 10px 0 0 145px;
+        width: 15%;
     }
-    #FB-logo{
-           width: 20%;
-           padding-right: 10px;
+    .container-md{
+        padding-top: 0px;
     }
-    
-    #Gmail-logo{
-        width: 26%;
-        padding-right: 10px;
-    }
-
-    h2{
-        font-size: 25px;
-        font-weight: bolder;
-    }
-    body{
-        font-size:12px;
-    }
-
 }
+

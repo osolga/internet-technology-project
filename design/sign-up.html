@@ -10,86 +10,84 @@
     <link rel="stylesheet" href="assets/css/css-front-page/sign-up.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="assets/fonts/fonts-front-page/simple-line-icons.min.css">
-    <script src="assets/js/js-Sign-Up/Sign-up.js"></script>
+    
     <title>Sign up</title>
   </head>
   <body>
-    <div class="container">
-        <img src="" alt="">
+   <nav class="nav-bar">
+     <div class="text-center">
+        <a href="front-page-index.html"><img id="logo" src="assets/img/img-front-page/logo.png" alt=""></a>
     </div>
-  <main>
-      <div class="p-responsive mt-4 mt-md-8">
-          <div class="class mb-4 col-mb-md-8 container-md">
-              <h1 class="d-md-block mt-3 mb-3 text-center">Create your account</h1>
-          </div>
-
+   </nav> 
+  
+  
+      <div  id="Form" class="p-responsive mt-4 mt-md-8 mb-4">
           <div class="container-sm">
-              <div class="mb-4 mt-3">
+              <h1 class="mt-3 mb-3 text-center">Create your account</h1>
+          </div>
+      </div>
+ 
+      <main>
+          <div  id="main" class="container-md">
+              <div class="mb-4 mt-4">
                   <form class="row g-3 needs-validation" novalidate>  
                      
-                      <div class="col-2">
+                      <div class="col-md-12 p-2 container-center">
                           <label for="validationCustom-Title" class="form-label">Title</label>
-                          <select class="form-select" id="title">
+                          <select class="form-select form-control" id="title">
                               <option selected disabled value="">Title</option>
-                              <option value="1"> Herr </option>
-                              <option value="2"> Frau </option>
+                              <option value="1"> Mr. </option>
+                              <option value="2"> Mrs. </option>
+                              <option value="3"> Ms.</option>
                           </select>
                         </div>
 
-                      <div class="col-md-5">
+                      <div class="col-md-12 p-2">
                         <label for="validationCustom-Firstname" class="form-label">First name</label>
                         <input type="text" class="form-control" id="validationCustom01" value="" required>
                         <div class="valid-feedback"> Looks good! </div>
                       </div>
 
-                      <div class="col-md-5">
+                      <div class="col-md-12  p-2">
                         <label for="validationCustom-Lastname" class="form-label">Last name</label>
                         <input type="text" class="form-control" id="validationCustom02" value="" required>
                         <div class="valid-feedback">
                           Looks good!
                         </div>
                       </div>
-                      <div class="col-7">
-                        <label for="validationCustom-Username" class="form-label">Username</label>
-                        <div class="input-group">
-                          <span class="input-group-text" id="inputGroupPrepend">@</span>
-                          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                          <div class="invalid-feedback">
-                            Please choose a username.
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-5">
+                      <div class="col-lg-3 col-md-12 p-2 mt-3">
                           <label for="validationCustom-DOB" class="form-label">Date of Birth</label>
                           <input type="date" class="form-control" id="birthday" name="birthday" required>
                           <div class ="invalid-feedback">Required*</div>
                       </div>
-                      <div class="col-6">
+                      
+                      <div class="col-lg-2 col-md-12 p-2 mt-3">
+                        <label for="validationCustom-Title" class="form-label">Gender</label>
+                        <select class="form-select form-control" id="gender">
+                            <option selected disabled value="">Gender</option>
+                            <option value="1"> Male </option>
+                            <option value="2"> Female</option>
+
+                        </select>
+                      </div>
+                
+                      <div class="col-md-7 p-2 mt-3">
                           <label for="validationCustom-Email" class="form-label">Email</label>
-                          <input type="email" class="form-control"  id="email" name="email" required>
+                          <input type="email" class="form-control" id="email" name="email" required>
                           <div class ="invalid-feedback">Required*</div>
                       </div>
-
-                      <div class="col-6">
-                        <label for="validationCustom-Tel" class="form-label">Tel</label>
-                        <input type="tel" class="form-control"  id="email" name="tel" required>
-                        <div class ="invalid-feedback">Required*</div>
-                    </div>
-
                       
-                      <div class="col-md-7">
+                      <div class="col-md-7 p-2 mt-3">
                         <label for="validationCustom-Address" class="form-label">Address</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="addess" name="address" required>
-                        </div>
                         <div class="invalid-feedback">Required*</div>
+                        </div>
                       </div>
-
-
-                      <div class="col-md-3">
+                      
+                      <div class="col-md-3 p-2 mt-3">
                           <label for="validationCustom-State" class="form-label">State</label>
-                          <select class="form-select" id="state">
+                          <select class="form-select form-control" id="state">
                               <option selected disabled value="">Select...</option>
                               <option value="1"> Aargau (AG) </option>
                               <option value="2"> Appenzell Ausserrhodern (AR) </option>
@@ -101,33 +99,88 @@
                           </select>
                       </div>
 
-                      <div class="col-md-2">
+                      <div class="col-md-2 p-2 mt-3">
                         <label for="validationCustom-Zip" class="form-label">Zip</label>
                         <input type="text" class="form-control" id="zip" required>
                         <div class="invalid-feedback">Required*</div>
                       </div>
-                      <div class="col-12">
+
+                      <div class="col-md-12 p-2 mt-3">
+                        <label for="validationCustom-Tel" class="form-label">Tel</label>
+                        <input type="number" class="form-control"  id="email" name="tel" required>
+                        <div class ="invalid-feedback">Required*</div>
+                      </div>
+                      
+
+                      <div class="col-md-12 p-2 mt-3">
+                        <label for="validationCustom-Username" class="form-label">Username</label>
+                        <div class="input-group">
+                          <span class="input-group-text" id="inputGroupPrepend">@</span>
+                          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                          <div class="invalid-feedback"> Required*</div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12 p-2 mt-3">
+                        <label for="validationCustom-newPassword" class="form-label">Password</label>
+                          <input type="checkbox" onclick="showPassword()">show
+                          <input type="password" class="form-control" id="newPassword" name="newPassword"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                          
+                          <div class="invalid-feedback"> Required*</div>
+                        </div>
+                      
+                      
+                      <div class="col-md-12 p-2 mt-3">
+                        <label for="validationCustom-CF-Password" class="form-label">Confirm Password</label>
+                          <input type="password" class="form-control" id="CF-Password" name="CF-Password" required>
+                          <div class="invalid-feedback">Required*</div>
+                      </div>
+                      
+
+                      <div class="col-12 mt-4 mb-4">
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label class="form-check-label" for="invalidCheck">
+                          <label id="Terms" class="form-check-label" for="invalidCheck">
                               By creating an account, you agree to BearBellyBar's 
                               <a target="_blank" id="tos-link" href="#">Terms &amp; Conditions </a> 
                                and <a target="_blank" id="privacy-link" href="#">Privacy Policy</a>
                           </label>
-                          <div class="invalid-feedback">
-                            You must agree before submitting.
-                          </div>
+                          <div class="invalid-feedback">You must agree before submitting.</div>
                         </div>
                       </div>
+
                       <div class="col-12">
                         <button class="btn btn-primary" type="submit">Submit</button>
                       </div>
                     </form>
               </div>
           </div>
+      </main>
 
-      </div>
-  </main>
+
+      <footer class="page-footer dark">
+        <div class="container">
+            <div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="front-page-index.html">Home</a></li>
+                        <li><a href="admin-login.html">Sign up</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#about-us">Company Information</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </footer>
+  <div class="footer-copyright text-center">
+    <p>© Student Project made by FHNW BIT students</p>
+</div>
 
   <!-- Optional JavaScript; choose one of the two! -->
   <script src="assets/js/js-Sign-Up/Sign-up.js"></script>
