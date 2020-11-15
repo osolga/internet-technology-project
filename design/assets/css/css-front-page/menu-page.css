@@ -1,4 +1,4 @@
-#menuPic{
+img{
     height: auto;
     max-width: 100%;
     vertical-align: top;
@@ -8,7 +8,35 @@
     margin:0px 0 0 0px;
 }
 
+p{
+    padding-top: 10px;
+}
+.btn{
+    background-color: #311a68!important;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold; 
+    color: aliceblue;
+    padding:10px;
+    transition:none ;
+}
 
+.btn:hover{
+    background-color:  #dfd5f7!important;
+    font-weight: bold;
+    color: rgb(58, 0, 112);
+}
+
+img{
+    padding-top: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
 #description-3{
     padding-top: 100px;
 }
@@ -24,6 +52,9 @@
     margin: 10px 0 0 125px;
     width: 25%;
     }
+    #wine, #food, #drinks{
+        padding-bottom: 20px;
+    }
 }
 
 @media screen and (max-width: 812px){
@@ -31,5 +62,6 @@
         font-size: 18px;
         text-align: center;
     }
+
 }
 

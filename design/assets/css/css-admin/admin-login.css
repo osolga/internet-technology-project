@@ -1,87 +1,77 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+html, body{height:100%;
+position:center ;}
 
-body{
-    background-color: rgb(54, 50, 50);
-}
+body{background-color: rgb(241, 241, 241);}
 
-.row{
-    background: rgb(241, 240, 240);
-    border-radius: 30px;
-}
 
-img{
-    height: auto;
-    max-width: 100%;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-}
-
-.btn1{
-    border: none;
-    outline: none;
-    height: 50px;
+.form-signin{
     width: 100%;
-    background-color: black;
-    color: white;
-    border-radius: 3px;
+    max-width: 330px;
+    padding:15px;
+    margin: auto;
 }
 
-.btn1:hover{
-   background-color: rgb(179, 177, 177);
-   border: 1px solid;
-   color: black; 
-   font-weight: bold;
-}
 
-.btn1:link {
-    color: white;
-    background-color: transparent;
+.field-icon {
+        float: right;
+        margin-left: -25px;
+        margin-top: -30px;
+        position: relative;
+        z-index: 2;
+      }
+      
+
+
+
+h1,button,p{
+    padding-top: 40px;
+}
+ button.btn{
+    background-color: #311a68!important;
+    border: none;
     text-decoration: none;
+    display: inline-block;
+    font-weight: bold; 
+ }
+
+.form-signin .form-control{
+    position: relative;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
 }
 
-@media  (max-width: 399.98px) {
-    .sp-wrap {
-      padding: 0;
-    }
-    #BBB-header{
-        font-size: 20px;
-    }
-    #Sign-in{
-        font-size: 16px;
-    }
+.form-control:focus{z-index: 2;}
 
-    #username{
-        font-size: 12px;
-    }
-    #password{
-        font-size: 12px;
-    }
-    #btnLogin{
-        font-size: 12px;
-    }
-    #rememberCheckbox{
-        font-size: 10px;
-    }
-    #forgotPW{
-        font-size: 10px;
-    }
+#inputEmail{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
+}
 
-    img{
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 0px;
-    }
-  }
+#inputPassword{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
 
-  @media screen and (max-width: 768px), (max-width: 812px) {
-    img{
-        
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 0px;
+
+
+@media (min-width: 400px){
+    #visibility{
+        position: absolute;
+        right: -100px;
+        transform: translate(0, -50%);
+        top: 20%;
+        cursor: pointer;   
     }
-  }
+}
+
+@media screen and (max-width: 1024px){
+    #visibility{
+        position: absolute;
+        right: -100px;
+        transform: translate(0, -50%);
+        top: 63%;
+        cursor: pointer;   
+    }
+}
