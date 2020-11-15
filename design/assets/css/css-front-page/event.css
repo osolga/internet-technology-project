@@ -1,0 +1,22 @@
+span{
+    text-align: center;
+}
+
+@media screen and (max-width: 400px){
+span{
+    text-align: left;
+}
+    .clean-info p{
+display: none;
+    }
+}
+
+
+@media screen and (max-width: 812px){
+#event2{
+padding-bottom: 30px;
+}
+#event3{
+    padding-bottom: 50px;
+}
+}
