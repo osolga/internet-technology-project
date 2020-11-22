@@ -8,3 +8,22 @@ $(".toggle-password").click(function() {
       input.attr("type", "password");
     }
   });
+
+
+  /*
+Show input password
+*/
+
+var state= false;
+function showPassword(){
+    if(state){
+  document.getElementById("inputPassword").setAttribute("type","password");
+  document.getElementById("eye").style.color='#a1045a';
+  state = false;
+     }
+     else{
+  document.getElementById("inputPassword").setAttribute("type","text");
+  document.getElementById("eye").style.color= '#4B0082';
+  state = true;
+     }
+}
