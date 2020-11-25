@@ -201,6 +201,10 @@ html, body {
   color: #ffffff!important;
 }
 
+#menubtn{
+text-align: center;
+}
+
 .clean-block .block-heading h1, .clean-block .block-heading h2, .clean-block .block-heading h3 {
   color: #2c3c77!important;
 }

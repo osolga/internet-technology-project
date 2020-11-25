@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/css-front-page/smoothproducts.css">
     <link rel="stylesheet" href="assets/css/css-front-page/event.css">
+    <link rel="stylesheet" href="assets/css/css-front-page/menu-page.css">
 </head>
 
 <body>
@@ -99,14 +100,15 @@
             </section>
         </section>
         <section id="menu" class="clean-block features">
-            <div class="container" id="menu">
+            <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">Menu</h2>
+
                 </div>
             </div>
             <div>
-                <p class="text-sm-center" id="description-3"><a href="menu.html"><img src="assets/img/img-front-page/menu_bear.png"></a></p>
-                <p class="text-sm-center" id="description-2">Please click on this bear to see our menu.</p>
+                <p onclick="closeMenuCard()" class="text-sm-center" id="menubtn"><img src="assets/img/img-front-page/menu_bear.png"></p>  
+                <div id ="detailmenu"></div>
             </div>
         </section>
         <section id="gallery" class="clean-block slider dark">
@@ -223,7 +225,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="assets/js/js-front-page/theme.js"></script>
-
+    <script src="assets/js/js-front-page/extend-menu.js"></script>
 </body>
 
 </html>
