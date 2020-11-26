@@ -4,14 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Menu</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="assets/bootstrap/bootstrap-front-page/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="assets/fonts/fonts-front-page/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/css-front-page/smoothproducts.css">
     <link rel="stylesheet" href="assets/css/css-front-page/menu-page.css">
-    
+
+    <link rel="stylesheet" href="assets/css/css-customer/cus-profile.css">
+
 </head>
 
 <body>
@@ -43,46 +45,85 @@
     </nav>
 
     <main class="page landing-page">
-        <section id="menu" class="clean-block features">
-            <div class="container" id="menu">
-                <div>
-                    <p class="text-sm-center" id="description-3"><a href="#menu"><img id="logoMenu" class="menu-bear " src="assets/img/img-front-page/menu_bear.png"></a></p>
-                </div>
-                <div class="block-heading">
-                    <h2 id="text-info" class="text-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dignissimos dolore velit, natus deserunt a vel neque sequi doloribus unde.</h2>
-                </div>
-        
-           <div id="menucard" class="container">
-            <div  class="row justify-content-between">
-                <div id="food"class="col-lg-4 col-md-4 col-sm-6">
-                    <img src="assets/img/img-front-page/menu-page/dish.jpg" alt="">
-                    <br>
-                    <p class="text-center"><b>Food</b></p>
-                    <a href="#"class="btn btn-block active" role ="button" aria-pressed="true"> View Main menu as PDF</a>
-                </div>
-                <div id="drinks" class="col-lg-4 col-md-4 col-sm-6">
-                    <img  src="assets/img/img-front-page/menu-page/drinks.jpg" alt="">
-                    <br>
-                    <p class="text-center"><b>Drinks</b></p>
-                    <a href="file/example-menu.PDF" class="btn btn-block active" role ="button" aria-pressed="true">View Drinks menu as PDF</a>
-                </div>
-                <div id="wine" class="col-lg-4 col-md-4 col-sm-6">
-                    <img src="assets/img/img-front-page/menu-page/weine.jpg" alt="">
-                    <br>
-                    <p class="text-center"><b>Wine</b></p>
-                    <a href="#" class="btn btn-block active" role ="button" aria-pressed="true">View Wine menu as PDF</a>
-                </div>
-            </div>
-            </div>
-            </div>
+        <div id="block" class="container">
+            <div class="row">
+              <div class="profile-nav col-md-3">
+                  <div class="panel">
+                      <div class="user-heading round">
+                          <a href="#">
+                              <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                          </a>
+                          <h1>Camila Smith</h1>
+                          <p>c.smith@theEmail.com</p>
+                      </div>
+                      <ul class="list-group list-group-flush">
+                          <li id="profile" class="active list-group-item d-flex justify-content-between align-items-center flex-wrap"><a href="#"> <i class="fa fa-user"></i> Profile</a></li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><a href="cus-edit-profile.html"> <i class="fa fa-edit"></i> Edit profile</a></li>
+                          <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><a href="#"> <i class="fa fa-edit"></i> Log out</a></li>
+                      </ul>
+                  </div>
               </div>
-        </section>
+
+
+              <div class="profile-info col-md-9">
+                  <div class="panel">
+                      <div id="blockinfo" class="panel-body bio-graph-info">
+                          <h1><b>Username: Rabbit</b></h1>
+                          <hr>
+                          <h2>Bio</h2>
+                          
+                          <div class="row"> 
+                            <div class="bio-row">
+                                  <p><span>First Name </span>: Camila</p>
+                              </div>
+                              <div class="bio-row">
+                                  <p><span>Last Name </span>: Smith</p>
+                              </div>
+                               <div class="bio-row">
+                                  <p><span>Birthday</span>: 13 July 1983</p>
+                              </div>
+                              <div class="bio-row">
+                                <p><span>Gender </span>: Female</p>
+                            </div>
+                              <div class="bio-row">
+                                  <p><span>State </span>: Bern (BE)</p>
+                              </div>
+                             
+                              <div class="bio-row">
+                                  <p><span>City </span>: Bern </p>
+                              </div>
+                              <div class="bio-row">
+                                  <p><span>Email </span>: c.smith@theEmail.com</p>
+                              </div>
+                              <div class="bio-row">
+                                  <p><span>Tel </span>: (12) 03 4567890</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="container">
+                  <div class="row">
+                      <div class="container">
+                          <h2>Reservation</h2>
+                      </div>
+                  </div>
+              </div>
+              </div>
+
+
+
+
+              
+
+
+
+            </div>
+        </div>
+    
     </main>
 
-
-
-    <!--Footer-->
-    <footer class="page-footer dark">
+     <!--Footer-->
+     <footer class="page-footer dark">
         <div class="container">
             <div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
                 <div class="col-sm-3">

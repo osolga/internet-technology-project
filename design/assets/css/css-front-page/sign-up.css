@@ -1,95 +1,165 @@
-body {
-    margin: 0;
-    font-family: Montserrat,Helvetica,Arial,sans-serif;
-    font-size: 1rem;
-    font-weight: var(--bxjxgl,500);
-    line-height: 1.5rem;
-    color: #111;
-    text-align: left;
-    background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 
-
-.ux-card {
-    border-radius: 4px;
-    margin: 0 0 1.25rem;
-    color: #111;
-    border: 1px solid #d4dbe0;
-}
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: .0625rem solid #d4dbe0;
-    margin-bottom: 1.25rem;
-}
-.ux-app {
-    background-color: #f5f7f8;
-    color: #444;
-}
-
-#Facebook{
-    column-width: 200px;
-}
-#logo {
-    padding-top: 50px;
-    padding-bottom: 10px;
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat';
   }
 
-#FB-logo{
-    width: 20%;
-    padding-right: 15px;
+<!--CreateAccount-->
+h1{   
+    color: black;
+     font-weight: bolder;
 }
 
-#Gmail-logo{
-    width: 14%;
-    padding-right: 15px;
+footer{
+    background-color:#929292ab;
+    padding: 10px;
 }
 
-.btn1{
+
+input[type=text], 
+[type=password], 
+[type=email], 
+[type=date], 
+[type=number]
+{
+    display: -webkit-inline-box;
+    background-color:  #cab9f1;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+
+
+
+
+#state, #title, #inputGroupPrepend, #gender{
+    background-color:  #cab9f1;
+}
+
+.btn-lg{
+    background-color: #311a68!important;
     border: none;
-    outline: none;
-    height: 50px;
-    width: 100%;
-    background-color: black;
-    color: white;
-    border-radius: 3px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold; 
+}
+.container-sm{
+    padding: 20px;
 }
 
-.btn1:hover{
-   background-color: rgb(179, 177, 177);
-   border: 1px solid;
-   color: black; 
-   font-weight: bold;
+main{
+    padding-bottom: 20px;
 }
 
-@media screen and (max-width: 400px){
+label{
+color:black;
+font-weight: bolder;
+font-size: 22px;
+}
+
+#visibility{
+    position: absolute;
+    right: 20px;
+    transform: translate(0, -50%);
+    top: 50%;
+    cursor: pointer;   
+}
+
+
+.fa{
+    font-size: 20px;
+    color: black;
+}
+
+#Terms{
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
+
+#logo{
+    padding-top: 20px;
+    width: 5%;
+}
+
+.footer-copyright{
+    padding-top: 30px;
+}
+
+.page-footer.dark a {
+    color: #d2d1d1;
+}
+
+.page-footer{
+    padding: 30px;
+    background-color: #2b2f31;
+}
+
+.page-footer.dark h5 {
+    color: #fff;
+}
+
+
+@media screen and (max-width: 768px){
+  
+    h1{
+       font-size: 30px;
+    } 
+
+  label{
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    input{
+        font-size: 12px;
+        box-shadow: 0px, 5px, 30px, 0px;
+    }
+
+    p{
+        font-size: 8px;
+    }
+    #main{
+        padding: 50px;
+    }
+
+    #Terms{
+        font-size: 10px;
+        font-weight: normal;
+    }
+
     #logo{
-       width: 30%;
-       margin: 10px 0 0 145px;
-    }
-    #FB-logo{
-           width: 20%;
-           padding-right: 10px;
-    }
-    
-    #Gmail-logo{
-        width: 26%;
-        padding-right: 10px;
+        width: 15%;
     }
 
-    h2{
-        font-size: 25px;
-        font-weight: bolder;
+    .btn-lg{
+        justify-content: center;
     }
-    body{
-        font-size:12px;
+    .container-md{
+        padding-top: 0px;
     }
 
-}
+    .page-footer {
+        text-align: center;
+    }
+    li {
+        display: list-item;
+        text-align: -webkit-match-parent;
+    }
+    *, :after, :before {
+        box-sizing: border-box;
+    }
+    .page-footer ul {
+        list-style-type: none;
+        padding-left: 0;
+        line-height: 1.7;
+    }
+    .page-footer ul li:before {
+    top: 9px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}}
+
+

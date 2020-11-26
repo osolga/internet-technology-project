@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   width: 100%;
+  
 }
 
 .sp-loading {
@@ -163,6 +164,9 @@ html, body {
   .sp-wrap {
     margin: 0 0 15px 0;
   }
+  #menu{
+    position: center;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -195,6 +199,10 @@ html, body {
 
 #description {
   color: #ffffff!important;
+}
+
+#menubtn{
+text-align: center;
 }
 
 .clean-block .block-heading h1, .clean-block .block-heading h2, .clean-block .block-heading h3 {

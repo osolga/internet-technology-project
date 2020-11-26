@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/fonts/fonts-front-page/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/css-front-page/smoothproducts.css">
+    <link rel="stylesheet" href="assets/css/css-front-page/event.css">
+    <link rel="stylesheet" href="assets/css/css-front-page/menu-page.css">
 </head>
 
 <body>
@@ -51,30 +53,45 @@
             <section class="clean-block about-us">
                 <div class="container">
                     <div class="block-heading">
-                        <h2 class="text-info">Why Choose Us</h2>
+                        <h2 class="text-info"><b>Up coming event</b> </h2>
                     </div>
-                    <div class="row justify-content-center">
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/img-front-page/avatars/bar1.jpg">
-                                <div class="card-body info">
-                                    <h4 class="card-title">Ice Cold Beer</h4>
-                                    <p class="card-text">We serve the finest beer in the city, captivatingly smooth and icy.</p>
+                    <div  class="row justify-content-center">
+                        <div class="col-md-4">
+                            <span ><h3>Dec 5</h3></span>
+                            <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/img-front-page/avatars/bar1.jpg">
+                                <div id="event1" class="card-body info">
+                                    <h4 class="card-title">Ice Cold Beer<span class="badge badge-warning">Hot!</span></h4>
+                                    <p><b>Show Time:</b> 19:00 
+                                        <br><b>price:</b> 40 CHF.-  </p>
+                                    <p class="card-text">We serve the special finest beer by the bartender from Germany...
+                                        <a href="#" class="card-link">Read more</a> </p>
+                                    <a href="#" class="btn active btn-block" role ="button" aria-pressed="true">Buy ticket</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/img-front-page/avatars/bar2.jpg">
-                                <div class="card-body info">
+                        <div class="col-md-4">
+                            <span><h3>Dec 12</h3></span>
+                            <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/img-front-page/avatars/bar2.jpg">
+                                <div id="event2" class="card-body info">
                                     <h4 class="card-title"><strong>Football Live</strong></h4>
-                                    <p class="card-text">Come and enjoy the night with beer and your favourite football team.</p>
+                                    <p><b>Show Time:</b> 19:00 
+                                    <br><b>price:</b> 20 CHF.-  </p>
+                                    <p class="card-text">Come and enjoy the night with beer and your favourite football team...
+                                        <a href="#" class="card-link">Read more</a> </p>
+                                    <a href="#" class="btn active btn-block" role ="button" aria-pressed="true">Buy ticket</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-4">
-                            <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="assets/img/img-front-page/avatars/bar3.jpg">
-                                <div class="card-body info">
-                                    <h4 class="card-title">Live Music</h4>
-                                    <p class="card-text">We play live music if you want to grab an after-work drink or dance the night away.</p>
+                        <div class="col-md-4">
+                            <span><h3>Dec 19</h3></span>
+                            <div class="card clean-card"><img class="card-img-top w-100 d-block" src="assets/img/img-front-page/avatars/bar3.jpg">
+                                <div id="event3" class="card-body info">
+                                    <h4 class="card-title"><strong>Live Music</strong></h4>
+                                    <p><b>Show Time:</b> 19:00 
+                                    <br><b>price:</b> 35 CHF.-  </p>
+                                    <p class="card-text">We play live music if you want to grab an after-work drink or...
+                                        <a href="#" class="card-link">Read more</a> </p>
+                                    <a href="#" class="btn active btn-block" role ="button" aria-pressed="true">Buy ticket</a>
                                 </div>
                             </div>
                         </div>
@@ -83,14 +100,15 @@
             </section>
         </section>
         <section id="menu" class="clean-block features">
-            <div class="container" id="menu">
+            <div class="container">
                 <div class="block-heading">
                     <h2 class="text-info">Menu</h2>
+
                 </div>
             </div>
             <div>
-                <p class="text-sm-center" id="description-3"><a href="menu.html"><img src="assets/img/img-front-page/menu_bear.png"></a></p>
-                <p class="text-sm-center" id="description-2">Please click on this bear to see our menu.</p>
+                <p onclick="closeMenuCard()" class="text-sm-center" id="menubtn"><img src="assets/img/img-front-page/menu_bear.png"></p>  
+                <div id ="detailmenu"></div>
             </div>
         </section>
         <section id="gallery" class="clean-block slider dark">
@@ -207,7 +225,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="assets/js/js-front-page/theme.js"></script>
-
+    <script src="assets/js/js-front-page/extend-menu.js"></script>
 </body>
 
 </html>
