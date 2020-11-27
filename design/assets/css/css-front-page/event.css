@@ -1,6 +1,25 @@
 span{
     text-align: center;
 }
+ul, li {list-style-type: none;}
+
+li{padding: 10px;}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0;
+}
+
+input{
+    border-radius: 12px;
+}
+#okbtn{
+    background-color: rgba(117, 66, 184, 0.815);
+    border-radius: 12px;
+    color: aliceblue;
+}
 
 @media screen and (max-width: 400px){
 span{
@@ -9,6 +28,9 @@ span{
     .clean-info p{
 display: none;
     }
+
+    body{ font-size: 12px;}
+   
 }
 
 
@@ -20,3 +42,4 @@ padding-bottom: 30px;
     padding-bottom: 50px;
 }
 }
+
