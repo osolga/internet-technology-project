@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Events</title>
+    <title>Basket</title>
     <link rel="stylesheet" href="assets/bootstrap/bootstrap-front-page/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="assets/fonts/fonts-front-page/simple-line-icons.min.css">
@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="assets/css/css-front-page/smoothproducts.css">
     <link rel="stylesheet" href="assets/css/css-front-page/menu-page.css">
     <link rel="stylesheet" href="assets/css/css-front-page/product.css">
-    <link rel="stylesheet" href="assets/css/css-front-page/event.css">
+    <link rel="stylesheet" href="assets/css/css-front-page/basket.css">
+
 </head>
 
 <body>
@@ -44,76 +45,69 @@
     </nav>
 
     <main class="page landing-page">
-        <div class="container">
+        <div class="container ">
             <div class="text-center">
-                <h2>Events</h2>
+                <h2>Baskets</h2>
                 <p class="lead"></p>
             </div>
-        <section id="all-events" class="clean-block features">
-           <h1 class="text-center">All events</h1>
-           <ul>
-               <li>Dec 5
-                   <div class="container">
-                       <div class="row">
-                            <div class="col-6 col-sm"> <img src="assets/img/img-front-page/avatars/bar1.jpg" alt=""></div>
-                            <div class="col-6 col-sm"><h2>Ice Cold Beer</h2><br>
-                                <div class="card-body info">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maxime placeat voluptates quam culpa quidem quisquam? Vel esse tenetur iusto.</p>
-                                    <p><b>Show Time:</b> 19:00 <br>
-                                    <b>price:</b> 40 CHF.-  </p>
-                                </div>
-                                <div class="col">
-                                    <form action="">
-                                        <p>Qty: <input type="number" min ="1" max="10">
-                                        <button id="okbtn" type="submit">add to cart</button></p> 
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                   </div>
-               </li>
-               <li>Dec 12
-                <div class="container">
-                    <div class="row">
-                         <div class="col-6"> <img src="assets/img/img-front-page/avatars/bar2.jpg" alt=""></div>
-                         <div class="col-6"><h2>Football Live</h2><br>
-                             <div class="card-body info">
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maxime placeat voluptates quam culpa quidem quisquam? Vel esse tenetur iusto.</p>
-                                 <p><b>Show Time:</b> 19:00 <br>
-                                 <b>price:</b> 20 CHF.-  </p>
-                             </div>
-                             <div class="col">
-                                 <form action="">
-                                     <p>Qty: <input type="number" min ="1" max="10">
-                                    <button id="okbtn" type="submit">add to cart</button></p> 
-                                 </form>
-                             </div>
-                         </div>
-                     </div>
+        
+          <div class="container content-area">
+            <div class="row g-3">
+             <div class="col">
+                 <h1 class="text-center py-3">Your order</h1>
+                    <table style="width: 100%;" >
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">subtotal</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td data-label="#">1</td>
+                            <td data-label="Product">Ice cold beer</td>
+                            <td data-label="Price">40</td>
+                            <td data-label="Qty">2</td>
+                            <td data-label="subtotal">80</td>
+                        </tr>
+                        <tr>
+                            <td scope="row" data-label="#">2</td>
+                            <td data-label="Product">Football Live</td>
+                            <td data-label="Price">20</td>
+                            <td data-label="Qty">5</td>
+                            <td data-label="subtotal">100</td>
+                        </tr>
+                        </tbody>
+                    </table>
+             </div>
+                <div id="carttotals" class="col-md-5 col-lg-12"> 
+                    <h4 class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="text-muted">Cart Total</span>
+                    </h4>
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total QTY</span>
+                            <strong>7</strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Total price</span>
+                            <strong>180</strong>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-               <li>Dec 19
-                <div class="container">
-                    <div class="row">
-                         <div class="col-6 col-sm"> <img src="assets/img/img-front-page/avatars/bar3.jpg" alt=""></div>
-                         <div class="col-6 col-sm"><h2>Live Music</h2><br>
-                             <div class="card-body info">
-                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et maxime placeat voluptates quam culpa quidem quisquam? Vel esse tenetur iusto.</p>
-                                 <p><b>Show Time:</b> 19:00 <br>
-                                 <b>price:</b> 35 CHF.-  </p>
-                             </div>
-                             <div class="col">
-                                 <form action="">
-                                     <p>Qty: <input type="number" min ="1" max="10">
-                                    <button id="okbtn" type="submit">add to cart</button></p> 
-                                 </form>
-                             </div>
-                         </div>
-                     </div>
+            </div>
+        
+            <div id="btn" class="container">
+                <div class="center">
+                   <a href="#" class="btn btn-lg active" role ="button" aria-pressed="true">check out</a>
+                   <a href="#" class="btn btn-lg active" role ="button" aria-pressed="true">cancel</a>  
                 </div>
-               </li>
-           </ul>  
-        </section>
+            </div>
+          </div>
+        </div>
     </main>
 
 

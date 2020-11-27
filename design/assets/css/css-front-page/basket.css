@@ -1,0 +1,97 @@
+
+
+
+main{
+    height: 100%;
+}
+.content-area {
+    padding: 30px 20px !important;
+}
+
+table {
+  
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  td,th {
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  .checkoutbtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+#cardtotals{
+    float: right;
+    width: 48%;
+    position: relative;
+    
+}
+
+#btn{
+    text-align: center;
+}
+#cnxbtn, #okbtn{
+    display: block;
+    padding: 10px;
+    border: 10px;
+}
+
+@media screen and (max-width: 768px){
+    *{
+        font-size: 14px;
+    }
+.content-area {
+    padding: 30px 20px !important;
+}
+
+@media screen and (max-width: 600px) {
+
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid rgb(104, 103, 103);
+      display: block;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+     
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+
