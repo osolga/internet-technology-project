@@ -1,42 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+div{
+    display: block;
+}
+
 span{
     text-align: center;
 }
-ul, li {list-style-type: none;}
-
-li{padding: 10px;}
-
-.card-body {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 0;
+a {
+    color: #888;
+    text-decoration: none;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
+
+.breadcrumb-list {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    list-style: none;
+    color: gray;
+}
+
+
+.breadcrumb-item.active {
+    color: black;
+}
+
+.thumbnail{
+	object-fit: cover;
+	max-width: 190px;
+	max-height: auto;
+	cursor: pointer;
+	opacity: 0.5;
+	margin: 6.5px;
+    border: none;
+
+}
+
+.thumbnail:hover{
+	opacity:1;
+}
+
+.active{
+	opacity: 1;
+}
+
+
+.add-to-cart {
+     background-color: rgba(117, 66, 184, 0.815);
+    color: aliceblue;
+    position: relative;
+    display: inline-block;
+    background: button;
+    border: none;
+    border-radius: 0;
+    padding: 7px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: translateZ(0);
+    transition: color 0.3s ease;
+
+}
+
+.add-to-cart:hover {background-color: rgb(226, 226, 228) ;
+color: black;}
+
+    
+
+.add-to-cart:before {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: button-hover;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: transform 0.3s ease-out;
+    }
+  
 
 input{
-    border-radius: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 40px;
 }
-#okbtn{
-    background-color: rgba(117, 66, 184, 0.815);
-    border-radius: 12px;
-    color: aliceblue;
+
+
+.image-list li {
+    margin: 0 0.75rem 0 0;
+    flex-basis: 100%;
+    -webkit-box-direction: normal;
 }
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    object-fit: cover;
+}
+
+
+
 
 @media screen and (max-width: 400px){
-img {
-    display:none;
-}
+  .product-image{
+      text-align: center;
+  }
+    .mainPic{
+       width: auto;
+    } 
+    .thumbnail{
+        object-fit: cover;
+        margin: 0;
+        width: 32%;
+        max-height: auto;
+    }
+    
+    h1{
+        text-align: center;
+        padding-top: 15px;
+        font-size: 20px;
+        font-weight: 600;
+    }
     main { font-size: 12px;}
    
-
 }
 
 
 @media screen and (max-width: 812px){
-#event2{
-padding-bottom: 30px;
+#slider{
+text-align: center;
 }
-#event3{
-    padding-bottom: 50px;
+
+.thumbnail{
+	object-fit: cover;
+	max-width: 190px;
+	max-height: auto;
 }
 }
+
 
