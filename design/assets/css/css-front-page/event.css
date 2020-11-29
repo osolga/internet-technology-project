@@ -22,15 +22,12 @@ input{
 }
 
 @media screen and (max-width: 400px){
-span{
-    text-align: left;
+img {
+    display:none;
 }
-    .clean-info p{
-display: none;
-    }
-
-    body{ font-size: 12px;}
+    main { font-size: 12px;}
    
+
 }
 
 
