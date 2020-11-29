@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Menu</title>
+    <title>Dec5</title>
     <link rel="stylesheet" href="assets/bootstrap/bootstrap-front-page/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="assets/fonts/fonts-front-page/simple-line-icons.min.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/css-front-page/smoothproducts.css">
     <link rel="stylesheet" href="assets/css/css-front-page/menu-page.css">
     <link rel="stylesheet" href="assets/css/css-front-page/product.css">
-    
+    <link rel="stylesheet" href="assets/css/css-front-page/event.css">
 </head>
 
 <body>
@@ -46,59 +46,51 @@
     <main class="page landing-page">
         <div class="container">
             <div class="text-center">
-                <h2>Products</h2>
+                <h2>Events</h2>
                 <p class="lead"></p>
             </div>
-        <section id="product" class="clean-block features">
-            <div class="d-flex flex row justify-content-center p-2 bg-primary">
-                <h1>Dec 5</h1>
-                <div class="row">    
-                    <div class="col-sm">
-                        <img src="assets/img/img-front-page/avatars/bar1.jpg" alt="">
-                    </div>
-                    <div class="col">
-                        <div class="container">
-                            <h1>Ice Cold Beer</h1>
-                            <input type="text">
-                            <button>add to cart</button>
-                        </div>
-                    </div>
-                </div>
+        
+        <section id="all-events" class="clean-block features">
+            <div class="col-xs-12">
+                <nav>
+                    <ol class="breadcrumb-list">
+                        <li class="breadcrumb-item"><a href="front-page-index.html">HOME</a></li>
+                        <li class="breadcrumb-item"><a href="#">All EVENTS</a></li>
+                        <li class="breadcrumb-item active">Dec 5</li>
+                    </ol>
+                </nav>
             </div>
-        </section>
-        <section id="product" class="clean-block features">
-            <div class="d-flex flex row justify-content-center p-2 bg-primary">
-                <h1>Dec 5</h1>
-                <div class="row">    
-                    <div class="col-sm">
-                        <img src="assets/img/img-front-page/avatars/bar1.jpg" alt="">
-                    </div>
-                    <div class="col">
-                        <div class="container">
-                            <h1>Ice Cold Beer</h1>
-                            <input type="text">
-                            <button>add to cart</button>
+
+           <h1 class="text-center">Dec 5</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <div class="product-gallery">
+                            <div class="product-image">
+                                <img class="mainPic" src="assets/img/img-front-page/avatars/bar1.jpg" alt="">
+                            </div>
+                            <div id="slider" class="image-list">
+                                <img class="thumbnail active" src="assets/img/img-front-page/avatars/bar1.jpg" alt="">
+                                <img class="thumbnail" src="assets/img/img-front-page/avatars/bar1.jpg" alt="">
+                                <img class="thumbnail" src="assets/img/img-front-page/avatars/bar1.jpg" alt="">
+                            </div>
                         </div>
+                        
                     </div>
-                </div>
-            </div>
-        </section>
-        <section id="product" class="clean-block features">
-            <div class="d-flex flex row justify-content-center p-2 bg-primary">
-                <h1>Dec 5</h1>
-                <div class="row">    
-                    <div class="col-sm">
-                        <img src="assets/img/img-front-page/avatars/bar1.jpg" alt="">
-                    </div>
-                    <div class="col">
-                        <div class="container">
+
+                    <div class="col-xs-12 col-md-12">
                             <h1>Ice Cold Beer</h1>
-                            <input type="text">
-                            <button>add to cart</button>
-                        </div>
+                            <hr>
+                            <h4>40 CHF</h4>
+                            <div class="description">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A possimus necessitatibus hic voluptas architecto cupiditate optio aliquid culpa soluta deleniti!
+                                </p>
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolores totam debitis ducimus sed illo magnam reprehenderit aspernatur obcaecati optio!</p>
+                            </div>
+                            <b>Qty </b> <input type="number"  min ="1" max="10">
+                            <button class ="add-to-cart">Add to cart</button>
                     </div>
-                </div>
-            </div>
+                </div>       
         </section>
     </main>
 
