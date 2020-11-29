@@ -1,12 +1,45 @@
 
-
-
 main{
     height: 100%;
 }
 .content-area {
     padding: 30px 20px !important;
 }
+
+#editQty{
+  width: 40px;
+}
+
+.remove-product {
+  border: 0;
+  padding: 4px 8px;
+  background-color: #c66;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.remove-product:hover {
+  background-color: #a44;
+}
+
+th.product-removal{
+  text-indent: -9999px;
+}
+.btn {
+  background-color: #311a68!important;
+  border: none;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+
+
+
+.btn:hover {
+  background-color: rgb(177, 175, 206);
+}
+
 
 table {
   
@@ -95,3 +128,4 @@ table {
     }
   }
 
+}

@@ -18,3 +18,16 @@ html, body {
       justify-content: center;
       padding-bottom: 0;
   }
+
+  @media screen and (max-width: 400px){
+    span{
+        text-align: left;
+    }
+        .clean-info p{
+    display: none;
+        }
+    
+        body{ font-size: 12px;}
+       
+        
+    }

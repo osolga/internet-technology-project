@@ -59,54 +59,61 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
-                            <th scope="col">subtotal</th>
+                            <th class="product-name" scope="col">Product</th>
+                            <th class="product-price" scope="col">Price</th>
+                            <th class="product-quantiy"scope="col">Qty</th>
+                            <th class="product-removal" scope="col">Remove</th>
+                            <th class="product-subtotal"scope="col">Subtotal</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td data-label="#">1</td>
-                            <td data-label="Product">Ice cold beer</td>
-                            <td data-label="Price">40</td>
-                            <td data-label="Qty">2</td>
-                            <td data-label="subtotal">80</td>
+                            <td class="product-name" data-label="Product">Ice cold beer</td>
+                            <td class="product-price" data-label="Price">40</td>
+                            <td class="product-quantiy" data-label="Qty"><input id="editQty" type="number" value="1" min="1"></td>
+                            <td class="product-removal" data-label="Remove"><button class="remove-product"> Remove </button></td>
+                            <td class="product-subtotal" data-label="subtotal">40</td>
                         </tr>
                         <tr>
-                            <td scope="row" data-label="#">2</td>
-                            <td data-label="Product">Football Live</td>
-                            <td data-label="Price">20</td>
-                            <td data-label="Qty">5</td>
-                            <td data-label="subtotal">100</td>
+                            <td data-label="#">2</td>
+                            <td class="product-name" data-label="Product">Football Live</td>
+                            <td class="product-price" data-label="Price">35</td>
+                            <td class="product-quantiy" data-label="Qty"><input id="editQty" type="number" value="1" min="1"></td>
+                            <td class="product-removal" data-label="Remove"><button class="remove-product"> Remove </button></td>
+                            <td class="product-subtotal" data-label="subtotal">35</td>
                         </tr>
                         </tbody>
                     </table>
              </div>
-                <div id="carttotals" class="col-md-5 col-lg-12"> 
+
+                 <div id="carttotals" class="col-md-5 col-lg-12"> 
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-muted">Cart Total</span>
                     </h4>
                     <ul class="list-group mb-3">
                         <li class="list-group-item d-flex justify-content-between">
                             <span>Total QTY</span>
-                            <strong>7</strong>
+                            <strong>2</strong>
                         </li>
                         <li class="list-group-item d-flex justify-content-between">
-                            <span>Total price</span>
-                            <strong>180</strong>
+                            <span id="cart-total">Total price</span>
+                            <strong class="totals-value">75</strong>
                         </li>
                     </ul>
                 </div>
-            </div>
+           
         
-            <div id="btn" class="container">
-                <div class="center">
-                   <a href="#" class="btn btn-lg active" role ="button" aria-pressed="true">check out</a>
-                   <a href="#" class="btn btn-lg active" role ="button" aria-pressed="true">cancel</a>  
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                    <button class ="btn"  aria-pressed="true">check out</button>
                 </div>
             </div>
+            </div>
+            
           </div>
+        </div>
         </div>
     </main>
 
@@ -141,6 +148,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="assets/js/js-front-page/theme.js"></script>
+    <script src="assets/js/js-front-page/basket.js"></script>
 </body>
 
 </html>
