@@ -45,7 +45,7 @@ public class ReservationEndpoint {
     }
 
     @GetMapping(path = "/reservation/{reservationId}", produces = "application/json")
-    public ResponseEntity<Reservation> getReservation(@PathVariable(value = "reservationId") String reservationID) {
+    public ResponseEntity<Reservation> getReservation(@PathVariable(value = "reservationId") String reservationId) {
         Reservation reservation = null;
         try {
             reservation = reservationService.findReservationById(Long.parseLong(reservationId));

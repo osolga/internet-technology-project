@@ -10,13 +10,13 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Table {
+public class BarTable {
 
     @Id
     @GeneratedValue
     private Long id;
     private Integer numSeats;
-    @OneToMany(mappedBy = "table")
+    @OneToMany(mappedBy = "barTable")
     @JsonIgnore
     private List<Reservation> reservation;
 

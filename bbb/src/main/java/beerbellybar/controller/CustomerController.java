@@ -49,7 +49,7 @@ public class CustomerController {
     @PutMapping("/profile")
     public ResponseEntity<Void> putProfile(@RequestBody Customer customer) {
         try {
-            customer.setId(cusomerService.getCurrentCustomer().getId());
+            customer.setId(customerService.getCurrentCustomer().getId());
             cusomerService.saveCustomer(customer);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());

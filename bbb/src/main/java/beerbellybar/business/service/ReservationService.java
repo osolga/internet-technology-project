@@ -27,7 +27,7 @@ public class ReservationService {
 
     public Reservation editReservation(@Valid Reservation reservation) throws Exception {
         if (reservation.getId() == null) {
-            if (reservationRepository.findByTableAndDate(reservation.getTable()) == null) {
+            if (reservationRepository.findByIdNotInReservationAndReservationTime(reservation.getBarTable()) == null) {
                 reservation.setCustomer(customerService.getCurrentCustomer());
                 return reservationRepository.save(reservation);
             }

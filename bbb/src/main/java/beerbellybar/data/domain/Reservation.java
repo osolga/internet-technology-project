@@ -18,7 +18,7 @@ public class Reservation {
     private Customer customer;
     @ManyToOne
     @JsonIgnore
-    private Table table;
+    private BarTable barTable;
 
     public Long getId() {return id;}
 
@@ -36,7 +36,7 @@ public class Reservation {
 
     public void setCustomer(Customer customer) {this.customer = customer;}
 
-    public Table getTable() {return table;}
+    public BarTable getBarTable() {return barTable;}
 
-    public void setTable(Table table) {this.table = table;}
+    public void setBarTable(BarTable barTable) {this.barTable = barTable;}
 }
