@@ -7,5 +7,5 @@ import beerbellybar.data.domain.Reservation;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-    Reservation findbyId(Long Id);
+    Reservation findByTable(Table table);
 }
