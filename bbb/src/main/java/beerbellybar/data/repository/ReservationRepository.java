@@ -5,7 +5,11 @@ import org.springframework.integration.jpa.dsl.Jpa;
 import org.springframework.stereotype.Repository;
 import beerbellybar.data.domain.Reservation;
 
+import java.util.List;
+
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-    Reservation findByTable(Table table);
+    Reservation findByTableAndDate(Table table, String reservationTime);
+    List<Reservation> findByCustomerId(Long customerId);
+    List<Reservation> finByIdAndCustomerId(Long reservationId, Long customerId);
 }

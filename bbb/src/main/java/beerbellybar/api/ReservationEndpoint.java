@@ -36,15 +36,15 @@ public class ReservationEndpoint {
                 .fromCurrentRequest().path("/{reservationId}")
                 .buildAndExpand(reservation.getId()).toUri();
 
-        return ResponseEntity.created(location).body(reservation):
+        return ResponseEntity.created(location).body(reservation);
     }
 
-    @GetMapping(path = "/reservation", produces =  = "application/json")
+    @GetMapping(path = "/reservation", produces = "application/json")
     public List<Reservation> getReservation() {
-        return  reservationService.findAllCustomers();
+        return  reservationService.findAllReservations();
     }
 
-    @GetMapping(path = "/reservation/{reservationId}", produces =  = "application/json")
+    @GetMapping(path = "/reservation/{reservationId}", produces = "application/json")
     public ResponseEntity<Reservation> getReservation(@PathVariable(value = "reservationId") String reservationID) {
         Reservation reservation = null;
         try {

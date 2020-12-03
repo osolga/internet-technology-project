@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Service
 @Validated
@@ -24,13 +25,24 @@ public class ReservationService {
 
     public Reservation editReservation(@Valid Reservation reservation) throws Exception {
         if (reservation.getId() == null) {
-            if (reservationRepository.findByTable(reservation.getTable()) == null) {
+            if (reservationRepository.findByTableAndDate(reservation.getTable()) == null) {
                 reservation.setCustomer(customerService.getCurrentCustomer());
                 return reservationRepository.save(reservation);
             }
         }
     }
 
+    public Reservation findReservationById(Long reservationId) throws Exception {
+        List<Reservation> reservationList = reservationRepository.findByIdAndCustomerId(reservationId, customerService.getCurrentCustomer().getId());
+        if(reservationList.isEmpty()) {
+            throw new Exception("No reservation with ID " + reservationId + " found");
+        }
+        return reservationList.get(0);
+    }
+
+    public List<Reservation> findAllReservations() {
+        return reservationRepository.findByCustomerId(customerService.getCurrentCustomer().getId());
+    }
 
 
 
