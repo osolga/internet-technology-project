@@ -36,7 +36,12 @@ public class CustomerService {
     }
 
     public Customer  getCurrentCustomer() {
-        Long customerId = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return customerRepository.findById(customerId);
+        String customerEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return customerRepository.findByEmail(customerEmail);
     }
 }
+
+   /** //todo public Customer  getCurrentCustomer() {
+        Long customerId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        return customerRepository.findById(customerId);
+    }*/
