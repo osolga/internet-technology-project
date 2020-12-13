@@ -1,4 +1,4 @@
-package beerbellybar.data.domain;
+package beerbellybar.bbb.data.domain;
 
 
 import javax.persistence.Entity;

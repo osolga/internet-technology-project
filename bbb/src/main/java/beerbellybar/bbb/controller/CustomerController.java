@@ -1,7 +1,8 @@
-package beerbellybar.controller;
+package beerbellybar.bbb.controller;
 
 
-import beerbellybar.data.domain.Customer;
+import beerbellybar.bbb.business.service.CustomerService;
+import beerbellybar.bbb.data.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class CustomerController {
 
     @Autowired
-    private CusomerService cusomerService;
+    private CustomerService customerService;
 
     @GetMapping("/login")
     public String getLoginView() {
@@ -28,7 +29,7 @@ public class CustomerController {
     @PostMapping("/user/register")
     public ResponseEntity<Void> postRegister(@RequestBody Customer customer) {
         try {
-            cusomerService.saveCustomer(customer);
+            customerService.saveCustomer(customer);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }
@@ -37,8 +38,7 @@ public class CustomerController {
 
     @GetMapping("/profile")
     public  @ResponseBody Customer getProfile() {
-        return cusomerService.getCurrentCustomer();
-        return "cus-profile.html";
+        return customerService.getCurrentCustomer();
     }
 
     @GetMapping("/profile/edit")
@@ -50,7 +50,7 @@ public class CustomerController {
     public ResponseEntity<Void> putProfile(@RequestBody Customer customer) {
         try {
             customer.setId(customerService.getCurrentCustomer().getId());
-            cusomerService.saveCustomer(customer);
+            customerService.saveCustomer(customer);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, e.getMessage());
         }

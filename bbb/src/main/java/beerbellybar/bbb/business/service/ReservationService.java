@@ -1,7 +1,8 @@
-package beerbellybar.business.service;
+package beerbellybar.bbb.business.service;
 
-import beerbellybar.data.domain.Reservation;
-import beerbellybar.data.repository.ReservationRepository;
+import beerbellybar.bbb.data.domain.BarTable;
+import beerbellybar.bbb.data.domain.Reservation;
+import beerbellybar.bbb.data.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -18,8 +19,6 @@ public class ReservationService {
     @Autowired
     private CustomerService customerService;
 
-    @Autowired
-
 
     public void deleteReservation(Long reservationId) {
         reservationRepository.deleteById(reservationId);
@@ -27,11 +26,13 @@ public class ReservationService {
 
     public Reservation editReservation(@Valid Reservation reservation) throws Exception {
         if (reservation.getId() == null) {
-            if (reservationRepository.findByIdNotInReservationAndReservationTime(reservation.getBarTable()) == null) {
+            if (reservationRepository.findByIdNotInReservationAndReservationTime(reservation.getBarTable().getId(), reservation.getReservationTime()) == null) {
                 reservation.setCustomer(customerService.getCurrentCustomer());
                 return reservationRepository.save(reservation);
             }
+            throw new Exception("Reservation not possible there are no free tables.");
         }
+        throw new Exception("Reservation not possible there are no free tables.");
     }
 
     public Reservation findReservationById(Long reservationId) throws Exception {
@@ -45,12 +46,4 @@ public class ReservationService {
     public List<Reservation> findAllReservations() {
         return reservationRepository.findByCustomerId(customerService.getCurrentCustomer().getId());
     }
-
-
-
-
-
-
-
-
 }

@@ -1,4 +1,4 @@
-package beerbellybar.controller;
+package beerbellybar.bbb.controller;
 
 
 import org.springframework.stereotype.Controller;
@@ -17,5 +17,10 @@ public class ReservationController {
     @GetMapping("/create")
     public String getReservationCreateView() {
         return "reservation-create.html";
+    }
+
+    @GetMapping("/edit")
+    public String getReservationEditView() {
+        return "reservation-edit.html";
     }
 }

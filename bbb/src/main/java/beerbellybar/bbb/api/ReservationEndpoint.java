@@ -1,8 +1,8 @@
-package beerbellybar.api;
+package beerbellybar.bbb.api;
 
 
-import beerbellybar.business.service.ReservationService;
-import beerbellybar.data.domain.Reservation;
+import beerbellybar.bbb.business.service.ReservationService;
+import beerbellybar.bbb.data.domain.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,6 @@ import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.ConstraintViolationException;
-import javax.ws.rs.Path;
 import java.net.URI;
 import java.util.List;
 

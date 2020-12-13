@@ -1,9 +1,10 @@
-package beerbellybar.data.domain;
+package beerbellybar.bbb.data.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Reservation {
@@ -12,7 +13,8 @@ public class Reservation {
     @GeneratedValue
     private Long id;
     private Integer numPeople;
-    private String reservationTime;
+    @Temporal(TemporalType.DATE)
+    private Date reservationTime;
     @ManyToOne
     @JsonIgnore
     private Customer customer;
@@ -28,9 +30,9 @@ public class Reservation {
 
     public void setNumPeople(Integer numPeople) {this.numPeople = numPeople;}
 
-    public String getReservationTime() {return reservationTime;}
+    public Date getReservationTime() {return reservationTime;}
 
-    public void setReservationTime(String reservationTime) {this.reservationTime = reservationTime;}
+    public void setReservationTime(Date reservationTime) {this.reservationTime = reservationTime;}
 
     public Customer getCustomer() {return customer;}
 

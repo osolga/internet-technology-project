@@ -1,6 +1,6 @@
-package beerbellybar.data.repository;
+package beerbellybar.bbb.data.repository;
 
-import beerbellybar.data.domain.MenuItem;
+import beerbellybar.bbb.data.domain.MenuItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

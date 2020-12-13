@@ -1,8 +1,8 @@
-package beerbellybar.data.repository;
+package beerbellybar.bbb.data.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import beerbellybar.data.domain.Customer;
+import beerbellybar.bbb.data.domain.Customer;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {

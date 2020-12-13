@@ -1,8 +1,8 @@
-package beerbellybar.business.service;
+package beerbellybar.bbb.business.service;
 
 
-import beerbellybar.data.domain.Customer;
-import beerbellybar.data.repository.CustomerRepository;
+import beerbellybar.bbb.data.domain.Customer;
+import beerbellybar.bbb.data.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -40,8 +40,3 @@ public class CustomerService {
         return customerRepository.findByEmail(customerEmail);
     }
 }
-
-   /** //todo public Customer  getCurrentCustomer() {
-        Long customerId = (Long) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return customerRepository.findById(customerId);
-    }*/

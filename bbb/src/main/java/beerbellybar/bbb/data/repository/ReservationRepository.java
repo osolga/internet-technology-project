@@ -1,17 +1,17 @@
-package beerbellybar.data.repository;
+package beerbellybar.bbb.data.repository;
 
-import beerbellybar.data.domain.BarTable;
+import beerbellybar.bbb.data.domain.BarTable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.integration.jpa.dsl.Jpa;
 import org.springframework.stereotype.Repository;
-import beerbellybar.data.domain.Reservation;
+import beerbellybar.bbb.data.domain.Reservation;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-    Reservation findByBarTableAndDate(BarTable barTable, String reservationTime);
+    Reservation findByBarTableAndDate(BarTable barTable, Date reservationTime);
     List<Reservation> findByCustomerId(Long customerId);
     List<Reservation> findByIdAndCustomerId(Long reservationId, Long customerId);
-    List<BarTable> findByIdNotInReservationAndReservationTime(Long barTableId, String reservationtime);
+    List<BarTable> findByIdNotInReservationAndReservationTime(Long barTableId, Date reservationTime);
 }
