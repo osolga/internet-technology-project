@@ -13,8 +13,12 @@
     <link rel="stylesheet" href="assets/css/css-front-page/menu-page.css">
     <link rel="stylesheet" href="assets/css/css-front-page/checkout.css">
 
+
     <script src="jquery-3.5.1.min.js"></script>
-    
+
+  <!-- dataPicker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/css/lightpick.min.css">
+   
 </head>
 
 <body>
@@ -32,7 +36,6 @@
                              
                 </ul>
                 
-               
                 <a class="nav-link active" href="sign-up.html">
                     <button class="btn btn-primary button-registration" type="button"><strong>SIGN UP</strong>
                     </button>
@@ -84,7 +87,7 @@
                     <label for="email" class="form-label">Email <span class="text-muted"></span></label>
                     <input type="email" class="form-control" id="email" placeholder="" required>
                     <div class="invalid-feedback">
-                      Please enter a valid email address for shipping updates.
+                      Please enter a valid email address.
                     </div>
                   </div>
       
@@ -92,7 +95,7 @@
                     <label for="phone" class="form-label">Mobile Phone</label>
                     <input type="text" class="form-control" id="phone" placeholder="" required>
                     <div class="invalid-feedback">
-                      Please enter your shipping address.
+                      Please enter your mobile phone.
                     </div>
                   </div>
       
@@ -109,25 +112,48 @@
                             <option value="6"> more than 5</option>
                             <option value="7"> more than 10</option>
                       </select>
-                      <div class="invalid-feedback">Please select a valid state</div>
+                      <div class="invalid-feedback">Please select the number of guests.</div>
                   </div>
                   </div>
 
                   <div class="form-group mb-3">
-                    <label for="remarks" class="form-label">Anything You would like to add?</label>
-                    <textarea class="form-control" id="remarks" placeholder=""></textarea>
-                  </div>
-      
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend"><span class="input-group-text">Date</span>
+                        </div>
+                        <input class="form-control" type="text" id="datePicker">
+                      </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <div class="input-group input-daterange">
+                      <div class="input-group-prepend"><span class="input-group-text">Time</span>
+                      <select class="custom-select d-block w-100" id="guests" required>
+                        <option selected disabled value="">Select...</option>
+                        <option value="1"> 5 pm </option>
+                        <option value="2"> 6 pm </option>
+                        <option value="3"> 7 pm </option>
+                        <option value="4"> 8 pm</option>
+                        <option value="5"> 9 pm</option>
+                        <option value="6"> 10 pm</option>
+                      </select>
+                    </div>
+              </div>
+            </div>
+
+                <div class="form-group mb-3">
+                  <label for="remarks" class="form-label">Anything You would like to add?</label>
+                  <textarea class="form-control" id="remarks" placeholder=""></textarea>
+                </div>
+
                 <hr class="mb-4">
 
-      
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Make reservation</button>
+                <div class="form-group mt-4"><button class="btn btn-primary btn-block" type="submit" id="reservationButton">Send</button></div>
+
               </form>
             </div>
         </div>
   
-    </main>
-       
+    </main>  
 
     <!--Footer-->
     <footer class="page-footer dark">
@@ -154,12 +180,22 @@
         </div>
     </footer>
 
+    <!-- Form -->
     <script src="assets/js/js-front-page/bill-payment-validation.js"></script>
     <script src="assets/js/js-front-page/jquery.min.js"></script>
     <script src="assets/bootstrap/bootstrap-front-page/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="assets/js/js-front-page/theme.js"></script>
+
+<!-- datePicker -->
+    <script src="assets/js/js-datePicker/jquery.min.js"></script>
+              <script src="assets/js/js-datePicker/smart-forms.min.js"></script>
+              <script src="assets/js/js-datePicker/datepicker.js"></script>
+            
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/lightpick.min.js"></script>
+
 </body>
 
 </html>
