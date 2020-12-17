@@ -2,11 +2,13 @@ package beerbellybar.bbb.business.service;
 
 import beerbellybar.bbb.data.domain.BarTable;
 import beerbellybar.bbb.data.domain.Reservation;
+import beerbellybar.bbb.data.repository.BarTableRepository;
 import beerbellybar.bbb.data.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,7 +20,8 @@ public class ReservationService {
     private ReservationRepository reservationRepository;
     @Autowired
     private CustomerService customerService;
-
+    @Autowired
+    private BarTableRepository barTableRepository;
 
     public void deleteReservation(Long reservationId) {
         reservationRepository.deleteById(reservationId);
@@ -45,5 +48,14 @@ public class ReservationService {
 
     public List<Reservation> findAllReservations() {
         return reservationRepository.findByCustomerId(customerService.getCurrentCustomer().getId());
+    }
+
+    @PostConstruct
+    private void initTables () {
+        barTableRepository.save(new BarTable());
+        barTableRepository.save(new BarTable());
+        barTableRepository.save(new BarTable());
+        barTableRepository.save(new BarTable());
+        barTableRepository.save(new BarTable());
     }
 }
