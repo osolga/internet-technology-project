@@ -8,7 +8,16 @@ html, body {
     padding-bottom: 280px;
 }
 
-
+table{
+    width: 100%;
+}
+h2{
+    padding-top: 20px;
+}
+#gotoReservation{
+    display: flex; justify-content: center;
+    padding-top: 50px;
+}
 #profile, #blockinfo{
     background-color: white;
 }
