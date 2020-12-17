@@ -171,3 +171,10 @@ body {
     display: inline-block;
 }
 
+#delbtn{
+    float: none;
+    display: inline-block;
+    margin-right: -2px;
+    white-space: nowrap;  
+      
+}
