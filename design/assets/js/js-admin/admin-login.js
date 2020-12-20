@@ -1,29 +1,71 @@
-$(".toggle-password").click(function() {
+$(document).ready(function () {
+    $("#form").submit(function (event) {
+        login($('input[name=username]').val(), $('input[name=password]').val(), $('input[name=remember]').is(":checked"), function (result) {
+            if(result) {
+                window.location.replace("../");
+            }
+            else {
+                $("#error-modal").modal('show');
+                $("#error-text").text("Bad credentials!");
+            }
+        });
+        event.preventDefault();
+    });
+});
 
-    $(this).toggleClass("fa-eye fa-eye-slash");
-    var input = $($(this).attr("toggle"));
-    if (input.attr("type") == "password") {
-      input.attr("type", "text");
-    } else {
-      input.attr("type", "password");
+
+validateLogin(function (result) {
+    if (!result) {
+        window.location.replace("../login");
     }
-  });
+});
 
 
-  /*
-Show input password
-*/
 
-var state= false;
-function showPassword(){
-    if(state){
-  document.getElementById("inputPassword").setAttribute("type","password");
-  document.getElementById("eye").style.color='#a1045a';
-  state = false;
-     }
-     else{
-  document.getElementById("inputPassword").setAttribute("type","text");
-  document.getElementById("eye").style.color= '#4B0082';
-  state = true;
-     }
+serviceEndpointURL = window.location.protocol + "//" + window.location.host;
+
+function login(email, password, remember, callback) {
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        headers: {
+            "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
+        },
+        url: serviceEndpointURL + "/login",
+        data: JSON.stringify({
+            "email": email,
+            "password": password,
+            "remember": remember
+        }),
+        success: function (data, textStatus, response) {
+            callback(true);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+            callback(false);
+        }
+    });
 }
+
+function getCookie(name) {
+    var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+}
+
+
+function validateLogin(callback) {
+    $.ajax({
+        type: "HEAD",
+        url: serviceEndpointURL + "/validate",
+        success: function (data, textStatus, response) {
+            callback(true);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            callback(false);
+        }
+    });
+}
+
+
+
+

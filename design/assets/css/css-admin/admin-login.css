@@ -1,10 +1,10 @@
 html, body{height:100%;
-position:center ;}
+    position:center ;}
 
 body{background-color: rgb(241, 241, 241);}
 
 
-.form-signin{
+.form-register .form-signin{
     width: 100%;
     max-width: 330px;
     padding:15px;
@@ -13,28 +13,28 @@ body{background-color: rgb(241, 241, 241);}
 
 
 .field-icon {
-        float: right;
-        margin-left: -25px;
-        margin-top: -30px;
-        position: relative;
-        z-index: 2;
-      }
-      
+    float: right;
+    margin-left: -25px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 2;
+}
+
 
 
 
 h1,button,p{
     padding-top: 40px;
 }
- button.btn{
+button.btn{
     background-color: #311a68!important;
     border: none;
     text-decoration: none;
     display: inline-block;
-    font-weight: bold; 
- }
+    font-weight: bold;
+}
 
-.form-signin .form-control{
+.form-signin .form-control .form-register{
     position: relative;
     height: auto;
     padding: 10px;
@@ -62,7 +62,7 @@ h1,button,p{
         right: -100px;
         transform: translate(0, -50%);
         top: 20%;
-        cursor: pointer;   
+        cursor: pointer;
     }
 }
 
@@ -72,6 +72,6 @@ h1,button,p{
         right: -100px;
         transform: translate(0, -50%);
         top: 63%;
-        cursor: pointer;   
+        cursor: pointer;
     }
 }
