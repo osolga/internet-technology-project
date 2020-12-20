@@ -1,0 +1,173 @@
+<!doctype html>
+<!--
+* Bootstrap Simple Admin Template
+* Version: 2.0
+* Author: Alexis Luna
+* Copyright 2020 Alexis Luna
+* Website: https://github.com/alexis-luna/bootstrap-simple-admin-template
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Reservations</title>
+
+    <link href="assets/fonts/fonts-admin/fontawesome.min.css" rel="stylesheet">
+    <link href="assets/fonts/fonts-admin/solid.min.css" rel="stylesheet">
+    <link href="assets/fonts/fonts-admin/brands.min.css" rel="stylesheet">
+    <link href="assets/css/css-customer/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/css-admin/admin-dashboard.css" rel="stylesheet">
+    <link href="assets/css/css-admin/admin-reservation.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <!--Sidebar-->
+    <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+            <img src="assets/img/img-front-page/logo.png" id="barLogo" alt="BBB logo" class="app-logo">
+        </div>
+        <ul class="list-unstyled components text-secondary">
+            <li>
+                <a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="admin-reservation.html"><i class="fas fa-book-open"></i>Reservation</a>
+            </li>
+            <li>
+                <a href="admin-customerlist.html"><i class="fas fa-user-friends"></i>Customer</a>
+            </li>
+            <li>
+                <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+            </li>
+        </ul>
+    </nav>
+    <!--Quick links-->
+    <div id="body" class="active">
+        <nav class="navbar navbar-expand-lg navbar-white bg-white">
+            <button type="button" id="sidebarCollapse" class="btn btn-light"><i class="fas fa-bars"></i><span></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <div class="nav-dropdown">
+                            <a href="" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><i class="fas fa-link"></i> <span>Quick Links</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-link-menu">
+                                <ul class="nav-list">
+                                    <li><a href="" class="dropdown-item"><i class="fas fa-list"></i> Access Logs</a></li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a href="" class="dropdown-item"><i class="fas fa-database"></i> Back ups</a></li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a href="" class="dropdown-item"><i class="fas fa-cloud-download-alt"></i> Updates</a></li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a href="" class="dropdown-item"><i class="fas fa-user-shield"></i> Roles</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!--Admin-->
+                    <li class="nav-item dropdown">
+                        <div class="nav-dropdown">
+                            <a href="" class="nav-item nav-link dropdown-toggle text-secondary" data-toggle="dropdown"><i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-link-menu">
+                                <ul class="nav-list">
+                                    <li><a href="" class="dropdown-item"><i class="fas fa-address-card"></i> Profile</a></li>
+                                    <li><a href="" class="dropdown-item"><i class="fas fa-envelope"></i> Messages</a></li>
+                                    <li><a href="" class="dropdown-item"><i class="fas fa-cog"></i> Settings</a></li>
+                                    <div class="dropdown-divider"></div>
+                                    <li><a href="admin-login.html" class="dropdown-item"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Main page-->
+        <div class="content">
+            <div class="container">
+                <div class="page-title">
+                    <h3>All reservations</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Reservations lists</div>
+                            <div class="card-body">
+                                <div class = "row">
+                                    <div class ="col-sm-12 col-md-12"></div>
+                                    <div class ="col-sm-12 col-md-12">
+                                       <!--<div id="dataTables-filter" class= "dataTables-filter">
+                                            <input class="form-control" id="reservationSearchInput" type="text" placeholder="Search by name">
+                                        </div>-->
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                <table class="table table-hover" id="dataTables-reservation" width="100%" >
+                                    <thead>
+                                    <tr>
+                                        <th>Customer ID</th>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                        <th>Table ID</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="reservationDetails">
+                                    <tr>
+                                        <td data-label="#">1</td>
+                                        <td data-label="Firstname">Dakota</td>
+                                        <td data-label="Lastname">Rice</td>
+                                        <td data-label="Email">Dakota@gmail.com</td>
+                                        <td data-label="Table ID">05</td>
+                                        <td data-label="Date">25 Feb 2021</td>
+                                        <td data-label="Time">19:00</td>
+                                        <td data-label="Amount">2 Persons</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td data-label="#">2</td>
+                                        <td data-label="Firstname">Minerva</td>
+                                        <td data-label="Lastname">Hooper</td>
+                                        <td data-label="Email">Ho@gmail.com</td>
+                                        <td data-label="Table ID">01</td>
+                                        <td data-label="Date">26 Feb 2021</td>
+                                        <td data-label="Time">20:00</td>
+                                        <td data-label="Amount">1 Persons</td>
+                                    </tr>
+                                    <tr>
+                                        <td data-label="#">3</td>
+                                        <td data-label="Firstname">Sage</td>
+                                        <td data-label="Lastname">Rodriguez</td>
+                                        <td data-label="Email">Rody@gmail.com</td>
+                                        <td data-label="Table ID">07</td>
+                                        <td data-label="Date">28 Feb 2021</td>
+                                        <td data-label="Time">21:30</td>
+                                        <td ata-label="Amount">4 Persons</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="assets/js/js-admin/jquery.min.js"></script>
+<script src="assets/js/js-admin/bootstrap.bundle.min.js"></script>
+<script src="assets/js/js-admin/datatables.min.js"></script>
+<script src="assets/js/js-admin/sidebar.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+
+</html>
