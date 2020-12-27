@@ -47,22 +47,22 @@
 
             <form method="POST" class="register">
                 <div class="field">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" placeholder="Username" name="username" required>
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Firstname" required>
+                    <input type="text" placeholder="Firstname" name="firstname" required>
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Lastname" required>
+                    <input type="text" placeholder="Lastname" name="lastname" required>
                 </div>
                 <div class="field">
-                    <input type="email" placeholder="Email Address" required>
+                    <input type="email" placeholder="Email Address" name="email"required>
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Tel 0123456789" required>
+                    <input type="text" placeholder="Tel 0123456789" name="tel"required>
                 </div>
                 <div class="field">
-                    <input type="password"id="inputPassword" placeholder="Password" required>
+                    <input type="password"id="inputPassword" placeholder="Password" name="password" required>
                     <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye" onclick="showPassword()"></span>
                 </div>
                 <div class="field">
@@ -89,6 +89,24 @@
 
 <script src="assets/js/js-admin/admin-register.js"></script>
 <script src="assets/js/js-customer/customer-login.js"></script>
-
+<script language="JavaScript">
+    $(document).ready(function () {
+        $("#form").submit(function (event) {
+            registerCustomer($('input[name=username]').val(),
+                $('input[name=firstname]').val(),
+                $('input[name=lastname]').val(),
+                $('input[name=email]').val(),
+                $('input[name=tel]').val(),
+                $('input[name=password]').val(),
+                function (result) {
+                window.location.replace("../");
+            }, function (error) {
+                $("#error-modal").modal('show');
+                $("#error-text").text(error);
+            });
+            event.preventDefault();
+        });
+    });
+</script>
 </body>
 </html>

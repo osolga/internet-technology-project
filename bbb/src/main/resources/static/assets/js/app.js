@@ -36,7 +36,9 @@ function validateLogin(callback) {
     });
 }
 
-function register(name, email, password, callbackSuccess, callbackError) {
+
+//Admin Register
+function registerAdmin(name, email, password, callbackSuccess, callbackError) {
     $.ajax({
         type: "POST",
         contentType: "application/json",
