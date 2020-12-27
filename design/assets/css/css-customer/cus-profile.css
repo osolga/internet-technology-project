@@ -171,10 +171,16 @@ body {
     display: inline-block;
 }
 
-#delbtn{
+.btn-rounded{
     float: none;
     display: inline-block;
     margin-right: -2px;
-    white-space: nowrap;  
+    white-space: nowrap;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
       
 }

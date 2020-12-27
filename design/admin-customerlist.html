@@ -95,38 +95,43 @@
                     <h3>All Customers
                         <!--<a href="roles.html" class="btn btn-sm btn-outline-primary float-right"><i class="fas fa-user-shield"></i> Roles</a>-->
                     </h3>
-                    <div id="dataTables-filter" class= "dataTables-filter">
+                    <!--<div id="dataTables-filter" class= "dataTables-filter">
                         <input class="form-control" id="customerSearchInput"  type="text" placeholder="Search">
-                    </div>
+                    </div>-->
                 </div>
-                <div class="box box-primary">
-                    <div class="box-body">
-                        <table width="100%" class="table table-hover" id="customerTable">
-                            <thead>
-                            <tr>
-                                <th>Cus ID</th>
-                                <th>Username</th>
-                                <th>Firstname</th>
-                                <th>Lastname</th>
-                                <th>Email</th>
-                                <th>Tel</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody id="reservationDetails">
-                            <tr>
-                                <td>1</td>
-                                <td>Philip</td>
-                                <td>Philip</td>
-                                <td>Chaney</td>
-                                <td>philip.chaney@gmail.com</td>
-                                <td>0112223355</td>
-                                <td class="text-right">
-                                    <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
-                                    <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover" id="dataTables" width="100%" >
+                                        <thead>
+                                            <tr>
+                                                <th>Cus ID</th>
+                                                <th>Username</th>
+                                                <th>Firstname</th>
+                                                <th>Lastname</th>
+                                                <th>Email</th>
+                                                <th>Tel</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="customerDetails">
+                                             <tr>
+                                                <td>1</td>
+                                                <td>Philip</td>
+                                                <td>Philip</td>
+                                                <td>Chaney</td>
+                                                <td>philip.chaney@gmail.com</td>
+                                                <td>0112223355</td>
+                                                <td class="text-right">
+                                                    <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-pen"></i></a>
+                                                    <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+                                                </td>
+                                             </tr>
+                                             <tr>
                                 <td>2</td>
                                 <td>Jess</td>
                                 <td>Jessica</td>
@@ -138,7 +143,7 @@
                                     <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
-                            <tr>
+                                             <tr>
                                 <td>3</td>
                                 <td>Philip</td>
                                 <td>Philip</td>
@@ -150,7 +155,7 @@
                                     <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
-                            <tr>
+                                             <tr>
                                 <td>4</td>
                                 <td>Phill</td>
                                 <td>Phillipa</td>
@@ -162,15 +167,20 @@
                                     <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
-                            </tbody>
-                        </table>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
 
 
 <script src="assets/js/js-admin/jquery.min.js"></script>
@@ -187,11 +197,12 @@
     $(document).ready(function(){
         $("#customerSearchInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
-            $("#reservationDetails tr").filter(function() {
+            $("#customerDetails tr").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
     });
 </script>
+
 </body>
 </html>
