@@ -21,13 +21,13 @@
             <form action ="admin-dashboard.html" method ="post" id="form" class="form-signin needs-validation">
                 <img src="assets/img/img-front-page/logo.png" alt="Logo">
                 <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
-                <div class="form-group"><input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus></div>
+                <div class="form-group"><input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username"required autofocus></div>
                 <div class="form-group">
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" value="" required autofocus>
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" value="" name="password" required autofocus>
                     <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eyePW" onclick="showPassword()"></span>
                 </div>
                 <div class="custom-control custom-checkbox m-3">
-                    <input type="checkbox" id="checkRememberMe" class="custom-control-input" value="remember-me" checked>
+                    <input type="checkbox" id="checkRememberMe" class="custom-control-input" value="remember-me" name="remember" checked>
                     <label for="checkRememberMe" class="custom-control-label">Remember me</label>
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
@@ -56,6 +56,26 @@
 
     <script src="assets/js/js-admin/admin-login.js"></script>
     <script src="assets/js/js-admin/admin-register.js"></script>
+    <script src="../bbb/src/main/resources/static/assets/js/app.js"></script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#form").submit(function (event) {
+                loginAdmin($('input[name=username]').val(),
+                    $('input[name=password]').val(),
+                    $('input[name=remember]').is(":checked"),
+                    function (result) {
+                    if(result) {
+                        window.location.replace("../");
+                    }
+                    else {
+                        $("#error-modal").modal('show');
+                        $("#error-text").text("Bad credentials!");
+                    }
+                });
+                event.preventDefault();
+            });
+        });
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

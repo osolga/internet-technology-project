@@ -1,6 +1,7 @@
 serviceEndpointURL = window.location.protocol + "//" + window.location.host;
 
-function login(email, password, remember, callback) {
+//Admin login
+function loginAdmin(username, password, remember, callback) {
     $.ajax({
         type: "POST",
         contentType: "application/json",
@@ -9,7 +10,7 @@ function login(email, password, remember, callback) {
         },
         url: serviceEndpointURL + "/login",
         data: JSON.stringify({
-            "email": email,
+            "username": username,
             "password": password,
             "remember": remember
         }),
