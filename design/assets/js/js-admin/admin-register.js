@@ -20,7 +20,7 @@ serviceEndpointURL = window.location.protocol + "//" + window.location.host;
 
 
 
-function registerAdmin(username, email, password, confirmPassword,  callbackSuccess, callbackError) {
+function registerAdmin(username, email, password, callbackSuccess, callbackError) {
     $.ajax({
         type: "POST",
         contentType: "application/json",

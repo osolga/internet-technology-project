@@ -14,7 +14,11 @@ public class Customer {
     @GeneratedValue
     private Long id;
     @NotEmpty(message = "Please provide a name.")
-    private String name;
+    private String username;
+    @NotEmpty(message = "Please provide a name.")
+    private String firstName;
+    @NotEmpty(message = "Please provide a name.")
+    private String lastName;
     @Email(message = "Please provide a valid e-mail.")
     @NotEmpty(message = "Please provide an e-mail.")
     private String email;
@@ -33,9 +37,13 @@ public class Customer {
 
     public void setId(Long id) {this.id = id;}
 
-    public String getName() {return name;}
+    public String getfirstName() {return firstName;}
 
-    public void setName(String name) {this.name = name;}
+    public void setFirstName(String name) {this.firstName = firstName;}
+
+    public String getLastName() {return lastName;}
+
+    public void setLastName(String name) {this.lastName = lastName;}
 
     public String getEmail() {return email;}
 
