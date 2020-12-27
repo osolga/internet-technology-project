@@ -16,7 +16,7 @@
         <div class="title login">Login</div>
         <div class="title register">Register</div>
     </div>
-
+    <!--Slider-->
     <div class="form-container">
         <div class="slide-controls">
             <input type="radio" name="slide" id="login" checked>
@@ -26,17 +26,22 @@
             <div class="slider-tab"></div>
         </div>
 
+        <!--Login form-->
         <div class="form-inner">
             <form action="cus-profile.html" class="login">
                 <div class="field">
-                    <input type="text" placeholder="Email Address" required>
+                    <input type="text" placeholder="Email Address" name="email" equired>
                 </div>
                 <div class="field">
-                    <input type="password" placeholder="Password" required>
-                    <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eyeLogin" onclick="showPassword()"></span>
+                    <input id="inputLoginPassword" type="password" placeholder="Password" name="password" required>
+                    <span toggle="#inputLoginPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eyeLogin" onclick="showLoginPassword()"></span>
 
                 </div>
                 <div class="pass-link"><a href="#">Forgot password?</a></div>
+                <div class="custom-control custom-checkbox m-3">
+                    <input type="checkbox" id="checkRememberMe" class="custom-control-input" value="remember-me" name="remember" checked>
+                    <label for="checkRememberMe" class="custom-control-label">Remember me</label>
+                </div>
                 <div class="field btn">
                     <div class="btn-layer"></div>
                     <input type="submit" value="Login">
@@ -56,13 +61,13 @@
                     <input type="text" placeholder="Lastname" name="lastname" required>
                 </div>
                 <div class="field">
-                    <input type="email" placeholder="Email Address" name="email"required>
+                    <input type="email" placeholder="Email Address" name="email" required>
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Tel 0123456789" name="tel"required>
+                    <input type="text" placeholder="Tel 0123456789" name="tel" required>
                 </div>
                 <div class="field">
-                    <input type="password"id="inputPassword" placeholder="Password" name="password" required>
+                    <input type="password" id="inputPassword" placeholder="Password" name="password" required>
                     <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye" onclick="showPassword()"></span>
                 </div>
                 <div class="field">
@@ -88,8 +93,28 @@
 
 
 <script src="assets/js/js-admin/admin-register.js"></script>
-<script src="assets/js/js-customer/customer-login.js"></script>
+<script src="assets/js/js-customer/cus-login.js"></script>
 <script src="../bbb/src/main/resources/static/assets/js/app.js"></script>
+
+<script language="JavaScript">
+    $(document).ready(function () {
+        $("#form").submit(function (event) {
+            loginCustomer($('input[name=email]').val(),
+                $('input[name=password]').val(),
+                $('input[name=remember]').is(":checked"),
+                function (result) {
+                if(result) {
+                    window.location.replace("../");
+                }
+                else {
+                    $("#error-modal").modal('show');
+                    $("#error-text").text("Bad credentials!");
+                }
+            });
+            event.preventDefault();
+        });
+    });
+</script>
 
 <script language="JavaScript">
     $(document).ready(function () {

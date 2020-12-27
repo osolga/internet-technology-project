@@ -43,7 +43,7 @@ public class CustomerController {
 
     @GetMapping("/profile/edit")
     public String getProfileView() {
-        return "cus-edit-profile.html";
+        return "cus-editprofile.html";
     }
 
     @PutMapping("/profile")

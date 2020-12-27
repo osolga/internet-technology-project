@@ -24,7 +24,8 @@ function loginAdmin(username, password, remember, callback) {
     });
 }
 
-function validateLogin(callback) {
+//validate admin login after update the Profile
+function validateAdminLogin(callback) {
     $.ajax({
         type: "HEAD",
         url: serviceEndpointURL + "/validate",
@@ -62,6 +63,72 @@ function registerAdmin(username, email, password, callbackSuccess, callbackError
     });
 }
 
+
+
+//after Admin edit or update profile
+function getAdminProfile(callback) {
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: serviceEndpointURL + "/profile",
+        success: function (data, textStatus, response) {
+            callback(data);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+        }
+    });
+}
+
+//after Admin edit or update profile
+function putAdminProfile(username, email, password, callbackSuccess, callbackError) {
+    $.ajax({
+        type: "PUT",
+        contentType: "application/json",
+        headers: {
+            "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
+        },
+        url: serviceEndpointURL + "/profile",
+        data: JSON.stringify({
+            "name": username,
+            "email": email,
+            "password": password
+        }),
+        success: function (data, textStatus, response) {
+            callbackSuccess(true);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+            callbackError(jqXHR.responseJSON.message);
+        }
+    });
+}
+
+//Customer login
+function loginCustomer(email, password, remember, callback) {
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        headers: {
+            "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
+        },
+        url: serviceEndpointURL + "/login",
+        data: JSON.stringify({
+            "email": email,
+            "password": password,
+            "remember": remember
+        }),
+        success: function (data, textStatus, response) {
+            callback(true);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+            callback(false);
+        }
+    });
+}
+
+
 //Customer register
 function registerCustomer(username, firstname, lastname, email, tel, password, callbackSuccess, callbackError){
     $.ajax({
@@ -90,7 +157,22 @@ function registerCustomer(username, firstname, lastname, email, tel, password, c
 }
 
 
-function getProfile(callback) {
+//validate Customer login after update the Profile
+function validateCusLogin(callback) {
+    $.ajax({
+        type: "HEAD",
+        url: serviceEndpointURL + "/validate",
+        success: function (data, textStatus, response) {
+            callback(true);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            callback(false);
+        }
+    });
+}
+
+//after Customer edit or update profile
+function getCusProfile(callback) {
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -104,7 +186,8 @@ function getProfile(callback) {
     });
 }
 
-function putProfile(name, email, password, callbackSuccess, callbackError) {
+//after Customer edit or update profile
+function putCusProfile(firstname, lastname, email, tel, newPassword, callbackSuccess, callbackError) {
     $.ajax({
         type: "PUT",
         contentType: "application/json",
@@ -113,9 +196,11 @@ function putProfile(name, email, password, callbackSuccess, callbackError) {
         },
         url: serviceEndpointURL + "/profile",
         data: JSON.stringify({
-            "name": name,
+            "firstname": firstname,
+            "lastname" : lastname,
             "email": email,
-            "password": password
+            "tel" : tel,
+            "newPassword": newPassword
         }),
         success: function (data, textStatus, response) {
             callbackSuccess(true);
@@ -126,6 +211,13 @@ function putProfile(name, email, password, callbackSuccess, callbackError) {
         }
     });
 }
+
+
+
+
+
+
+
 
 function postReservation(reservation, callbackSuccess, callbackError) {
     $.ajax({

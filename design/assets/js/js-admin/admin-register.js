@@ -4,6 +4,20 @@ Show input password
 */
 
 var state= false;
+function showLoginPassword(){
+    if(state){
+        document.getElementById("inputLoginPassword").setAttribute("type","password");
+        document.getElementById("eyeLogin").style.color='#a1045a';
+        state = false;
+    }
+    else{
+        document.getElementById("inputLoginPassword").setAttribute("type","text");
+        document.getElementById("eyeLogin").style.color= '#4B0082';
+        state = true;
+    }
+}
+
+var state= false;
 function showPassword(){
     if(state){
         document.getElementById("inputPassword").setAttribute("type","password");

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/css-front-page/smoothproducts.css">
     <link rel="stylesheet" href="assets/css/css-front-page/menu-page.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/css-customer/cus-edit-Profile.css">
+    <link rel="stylesheet" href="assets/css/css-customer/cus-editProfile.css">
 
 </head>
 
@@ -88,21 +88,22 @@
                           </ul>
                           <div class="tab-content pt-3">
                             <div class="tab-pane active">
-                              <form class="form" novalidate="">
+
+                                <form action="customer-login-register.html" method="post" id="form" class="form">
                                 <div class="row">
                                   <div class="col">
                                     <div class="row">
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Firstname</label>
-                                          <input class="form-control" type="text" name="firstname" placeholder="Camila" value="Camila">
+                                          <input class="form-control" type="text" name="firstname" placeholder="Camila" value="" name="firstname" required>
                                         </div>
                                         
                                       </div>
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Lastname</label>
-                                          <input class="form-control" type="text" name="lastname" placeholder="Smith" value="Smith">
+                                          <input class="form-control" type="text" name="lastname" placeholder="Smith" value="" name="lastname" required>
                                         </div>
                                       </div>
                                     </div>
@@ -111,7 +112,7 @@
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Email</label>
-                                          <input class="form-control" type="text" placeholder="">
+                                          <input class="form-control" type="text" placeholder="" name="email" required>
                                         </div>
                                       </div>
                                     </div>
@@ -120,7 +121,7 @@
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Tel</label>
-                                          <input class="form-control" type="text" placeholder="">
+                                          <input class="form-control" type="text" placeholder="" name="tel" required>
                                         </div>
                                       </div>
                                     </div>
@@ -138,15 +139,15 @@
 
                                   </div>
                                 </div>
-                                <div class="row needs-validation"novalidate id="form" method="POST" action="#" onsubmit="checkPWDMatch()">
+                                <div class="row needs-validation"novalidate  method="POST" action="#" onsubmit="checkPWDMatch()">
                                   <div class="col-12 col-sm-6 mb-3">
                                     <div class="mb-2"><b>Change Password</b></div>
                                     <div class="row">
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Current Password</label>
-                                          <input class="form-control" type="password" placeholder="" required>
-                                          <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye" onclick="showPassword1()"></span>
+                                          <input id="inputCurrentPassword" class="form-control" type="password" placeholder="" required>
+                                          <span toggle="#inputCurrentPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye1" onclick="showCurrentPassword()"></span>
                                         </div>
                                       </div>
                                     </div>
@@ -155,8 +156,8 @@
                                       <div class="col">
                                         <div class="form-group">
                                           <label>New Password</label>
-                                          <input id="newPassword" name="newPassword" class="form-control" type="password" placeholder="" required>
-                                          <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye" onclick="showPassword2()"></span>
+                                          <input id="inputNewPassword" name="newPassword" class="form-control" type="password" placeholder="" required>
+                                          <span toggle="#inputNewPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye2" onclick="showNewPassword01()"></span>
                                           <div class="invalid-feedback">Required*</div>
                                         </div>
                                       </div>
@@ -166,8 +167,8 @@
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Confirm Password</label>
-                                          <input id="cfPassword" name = "cfPassword" class="form-control" type="password" placeholder="" required>
-                                          <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye" onclick="showPassword3()"></span>
+                                          <input id="inputCFPassword" name = "cfPassword" class="form-control" type="password" placeholder="" required>
+                                          <span toggle="#inputCFPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye3" onclick="showNewPassword02()"></span>
                                       </div>
                                     </div>
                                   </div>
@@ -265,7 +266,42 @@
         </div>
     </footer>
 
-    <script src="assets/js/js-front-page/js-Customer/edit-profile.js"></script>
+
+    <script src="../bbb/src/main/resources/static/assets/js/app.js"></script>
+    <script language="JavaScript">
+        validateCusLogin(function (result) {
+            if (!result) {
+                window.location.replace("../login");
+            }
+        });
+    </script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            getCusProfile(function (result) {
+                $('input[name=username]').val(result["username"]);
+                $('input[name=firstname]').val(result["firstname"]);
+                $('input[name=lastname]').val(result["lastname"]);
+                $('input[name=email]').val(result["email"]);
+                $('input[name=tel]').val(result["tel"]);
+            });
+
+            $("#form").submit(function (event) {
+                putCusProfile($('input[name=firstname]').val(),
+                    $('input[name=lastname]').val(),
+                    $('input[name=email]').val(),
+                    $('input[name=newPassword]').val(),
+                    function (result) {
+                    window.location.replace("/customer");
+                }, function (error) {
+                    $("#error-modal").modal('show');
+                    $("#error-text").text(error);
+                });
+                event.preventDefault();
+            });
+        });
+    </script>
+
+    <script src="assets/js/js-customer/cus-editProfile.js"></script>
     <script src="assets/js/js-front-page/jquery.min.js"></script>
     <script src="assets/bootstrap/bootstrap-front-page/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
