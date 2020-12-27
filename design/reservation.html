@@ -68,7 +68,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <label for="firstName" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required>
                     <div class="invalid-feedback">
                       Valid first name is required.
                     </div>
@@ -76,7 +76,7 @@
       
                   <div class="col-md-6 mb-3">
                     <label for="lastName" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="" required="">
                     <div class="invalid-feedback">
                       Valid last name is required.
                     </div>
@@ -85,7 +85,7 @@
       
                   <div class="mb-3">
                     <label for="email" class="form-label">Email <span class="text-muted"></span></label>
-                    <input type="email" class="form-control" id="email" placeholder="" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                     <div class="invalid-feedback">
                       Please enter a valid email address.
                     </div>
@@ -93,7 +93,7 @@
       
                   <div class="mb-3">
                     <label for="phone" class="form-label">Mobile Phone</label>
-                    <input type="text" class="form-control" id="phone" placeholder="" required>
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="" required>
                     <div class="invalid-feedback">
                       Please enter your mobile phone.
                     </div>
@@ -102,7 +102,7 @@
                   <div class="row">
                     <div class="col-md-5 mb-3"> 
                       <label for="guests">Number of guests</label>
-                      <select class="custom-select d-block w-100" id="guests" required>
+                      <select class="custom-select d-block w-100" id="guests" name="guests" required>
                         <option selected disabled value="">Select...</option>
                             <option value="1"> 1 </option>
                             <option value="2"> 2 </option>
@@ -120,14 +120,14 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend"><span class="input-group-text">Date</span>
                         </div>
-                        <input class="form-control" type="text" id="datePicker">
+                        <input class="form-control" type="text" id="datePicker" name="date" >
                       </div>
                 </div>
 
                 <div class="form-group mb-3">
                   <div class="input-group input-daterange">
                       <div class="input-group-prepend"><span class="input-group-text">Time</span>
-                      <select class="custom-select d-block w-100" id="guests" required>
+                      <select class="custom-select d-block w-100" id="time" name="time" required>
                         <option selected disabled value="">Select...</option>
                         <option value="1"> 5 pm </option>
                         <option value="2"> 6 pm </option>
@@ -140,10 +140,10 @@
               </div>
             </div>
 
-                <div class="form-group mb-3">
+                <!-- <div class="form-group mb-3">
                   <label for="remarks" class="form-label">Anything You would like to add?</label>
                   <textarea class="form-control" id="remarks" placeholder=""></textarea>
-                </div>
+                </div> -->
 
                 <hr class="mb-4">
 
@@ -195,6 +195,23 @@
             
               <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
               <script src="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/lightpick.min.js"></script>
+
+
+    <script language="JavaScript">
+      $(document).ready(function () {
+          $("#form").submit(function (event) {
+              register($('input[name=firstName]').val(), $('input[name=lastName]').val(), 
+              $('input[name=email]').val(), $('input[name=phone]').val(), $('input[name=guests]').val(), 
+              $('input[name=date]').val(), $('input[name=time]').val(), function (result) {
+                  window.location.replace("../");
+              }, function (error) {
+                  $("#error-modal").modal('show');
+                  $("#error-text").text(error);
+              });
+              event.preventDefault();
+          });
+      });
+    </script>
 
 </body>
 

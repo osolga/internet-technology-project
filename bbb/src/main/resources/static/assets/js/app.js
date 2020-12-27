@@ -213,23 +213,30 @@ function putCusProfile(firstname, lastname, email, tel, newPassword, callbackSuc
 }
 
 
+//Reservation register
+// QUESTION: Where to add bar table, customers can not choose it, how would they know which table to choose?
 
-
-
-
-
-
-function postReservation(reservation, callbackSuccess, callbackError) {
+function postReseravation(firstName, lastName, email, phone, guests, date, time, callbackSuccess, callbackError) {
     $.ajax({
         type: "POST",
         contentType: "application/json",
         headers: {
             "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
         },
-        url: serviceEndpointURL + "/api/reservation",
-        data: reservation,
+        url: serviceEndpointURL + "",
+
+        data: JSON.stringify({
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "phone": phone,
+            "guests": guests,
+            "date": date,
+            "time": time
+
+        }),
         success: function (data, textStatus, response) {
-            callbackSuccess(data);
+            callbackSuccess(true);
         },
         error: function (jqXHR, textStatus, errorThrown) {
             console.log(jqXHR, textStatus, errorThrown);
@@ -238,25 +245,27 @@ function postReservation(reservation, callbackSuccess, callbackError) {
     });
 }
 
-function getReservation(reservationID, callback) {
-    $.ajax({
-        type: "GET",
-        dataType: "json",
-        url: serviceEndpointURL + "/api/reservation/" + reservationID,
-        success: function (data, textStatus, response) {
-            callback(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR, textStatus, errorThrown);
-        }
-    });
-}
+// QUESTION: how to get reservation? where to store reservationID? How to assign an ID to reservation?
+
+// function getReservation(reservationID, callback) {
+//     $.ajax({
+//         type: "GET",
+//         dataType: "json",
+//         url: serviceEndpointURL + "" + reservationID,
+//         success: function (data, textStatus, response) {
+//             callback(data);
+//         },
+//         error: function (jqXHR, textStatus, errorThrown) {
+//             console.log(jqXHR, textStatus, errorThrown);
+//         }
+//     });
+// }
 
 function getReservation(callback) {
     $.ajax({
         type: "GET",
         dataType: "json",
-        url: serviceEndpointURL + "/api/reservation",
+        url: serviceEndpointURL + "",
         success: function (data, textStatus, response) {
             callback(data);
         },
@@ -266,15 +275,26 @@ function getReservation(callback) {
     });
 }
 
-function putReservation(reservationID, reservation, callbackSuccess, callbackError) {
+function putReservation(firstName, lastName, email, phone, guests, date, time, callbackSuccess, callbackError) {
     $.ajax({
         type: "PUT",
         contentType: "application/json",
         headers: {
             "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
         },
-        url: serviceEndpointURL + "/api/reservation/" + reservationID,
-        data: reservation,
+        url: serviceEndpointURL + "",
+        
+        data: JSON.stringify({
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "phone": phone,
+            "guests": guests,
+            "date": date,
+            "time": time
+
+        }),
+
         success: function (data, textStatus, response) {
             callbackSuccess(data);
         },
@@ -285,37 +305,50 @@ function putReservation(reservationID, reservation, callbackSuccess, callbackErr
     });
 }
 
-function deleteReservation(reservationID, callback) {
-    $.ajax({
-        type: "DELETE",
-        headers: {
-            "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
-        },
-        url: serviceEndpointURL + "/api/reservation/" + reservationID,
-        success: function (data, textStatus, response) {
-            callback(data);
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR, textStatus, errorThrown);
-        }
-    });
-}
+// QUESTION: how to delete reservation? where to store reservationID? How to assign an ID to reservation?
 
-function getReservationJSON(id, numPeople, reservationTime, barTable) {
+// function deleteReservation(reservationID, callback) {
+//     $.ajax({
+//         type: "DELETE",
+//         headers: {
+//             "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
+//         },
+//         url: serviceEndpointURL + "/api/reservation/" + reservationID,
+//         success: function (data, textStatus, response) {
+//             callback(data);
+//         },
+//         error: function (jqXHR, textStatus, errorThrown) {
+//             console.log(jqXHR, textStatus, errorThrown);
+//         }
+//     });
+// }
+
+function getReservationJSON(firstName, lastName, email, phone, guests, date, time) {
     if (id === null) {
         return JSON.stringify({
-            "People": numPeople,
-            "Date": reservationTime,
-            "Table": barTable
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "phone": phone,
+            "guests": guests,
+            "date": date,
+            "time": time
+
         });
     }
     return JSON.stringify({
-        "Id": id,
-        "People": numPeople,
-        "Date": reservationTime,
-        "Table": barTable
+        "firstName": firstName,
+        "lastName": lastName,
+        "email": email,
+        "phone": phone,
+        "guests": guests,
+        "date": date,
+        "time": time
+
     });
 }
+
+
 
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
