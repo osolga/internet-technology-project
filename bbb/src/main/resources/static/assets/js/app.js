@@ -38,7 +38,7 @@ function validateLogin(callback) {
 
 
 //Admin Register
-function registerAdmin(name, email, password, callbackSuccess, callbackError) {
+function registerAdmin(username, email, password, callbackSuccess, callbackError) {
     $.ajax({
         type: "POST",
         contentType: "application/json",
@@ -47,7 +47,7 @@ function registerAdmin(name, email, password, callbackSuccess, callbackError) {
         },
         url: serviceEndpointURL + "/user/register",
         data: JSON.stringify({
-            "name": name,
+            "name": username,
             "email": email,
             "password": password
         }),
@@ -60,6 +60,34 @@ function registerAdmin(name, email, password, callbackSuccess, callbackError) {
         }
     });
 }
+
+//Customer register
+function registerCustomer(username, firstname, lastname, email, tel, password, callbackSuccess, callbackError){
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        headers: {
+            "X-XSRF-TOKEN": getCookie("XSRF-TOKEN")
+        },
+        url: serviceEndpointURL + "/user/register",
+        data: JSON.stringify({
+            "name": username,
+            "firstname": firstname,
+            "lastname": lastname,
+            "email": email,
+            "tel": tel,
+            "password": password
+        }),
+        success: function (data, textStatus, response) {
+            callbackSuccess(true);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR, textStatus, errorThrown);
+            callbackError(jqXHR.responseJSON.message);
+        }
+    });
+}
+
 
 function getProfile(callback) {
     $.ajax({
