@@ -23,6 +23,8 @@ body{background-color: rgb(241, 241, 241);}
 
 
 
+
+
 h1,button,p{
     padding-top: 40px;
 }
@@ -64,6 +66,7 @@ button.btn{
         top: 20%;
         cursor: pointer;
     }
+
 }
 
 @media screen and (max-width: 1024px){
@@ -74,4 +77,5 @@ button.btn{
         top: 63%;
         cursor: pointer;
     }
+
 }

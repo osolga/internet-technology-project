@@ -204,3 +204,9 @@ form .btn input[type="submit"]{
     position: relative;
     z-index: 2;
 }
+
+p{
+    font-size: 10px;
+    position: center;
+    padding-top: 20px;
+}
