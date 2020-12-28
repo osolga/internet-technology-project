@@ -11,7 +11,7 @@ img{
 p{
     padding-top: 10px;
 }
-.btn{
+.btn-block{
     background-color: #311a68!important;
     border: none;
     text-decoration: none;
@@ -22,7 +22,7 @@ p{
     transition:none ;
 }
 
-.btn:hover{
+.btn-block:hover{
     background-color:  #dfd5f7!important;
     font-weight: bold;
     color: rgb(58, 0, 112);
