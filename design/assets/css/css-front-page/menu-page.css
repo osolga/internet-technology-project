@@ -11,7 +11,7 @@ img{
 p{
     padding-top: 10px;
 }
-.btn-block{
+.btn-block, .button-registration, #btnSave, #btnEditPhoto {
     background-color: #311a68!important;
     border: none;
     text-decoration: none;
