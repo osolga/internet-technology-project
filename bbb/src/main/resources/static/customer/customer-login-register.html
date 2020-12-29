@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/css-customer/customer-login.css">
+    <link rel="stylesheet" href="../assets/css/css-customer/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Login</title>
+</head>
+<body>
+<div class="wrapper">
+    <img src="../assets/img/img-front-page/logo.png" alt="ERROR" class="logo-center">
+    <div class="title-text">
+        <div class="title login">Login</div>
+        <div class="title register">Register</div>
+    </div>
+    <!--Slider-->
+    <div class="form-container">
+        <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="register">
+            <label for="login" class="slide login">Login</label>
+            <label for="register" class="slide register">Register</label>
+            <div class="slider-tab"></div>
+        </div>
+
+        <!--Login form-->
+        <div class="form-inner">
+            <form action="cus-profile.html" class="login">
+                <div class="field">
+                    <input type="text" placeholder="Email Address" name="email" required>
+                </div>
+                <div class="field">
+                    <input id="inputLoginPassword" type="password" placeholder="Password" name="password" required>
+                    <span toggle="#inputLoginPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eyeLogin" onclick="showLoginPassword()"></span>
+
+                </div>
+                <div class="pass-link"><a href="#">Forgot password?</a></div>
+                <div class="custom-control custom-checkbox m-3">
+                    <input type="checkbox" id="checkRememberMe" class="custom-control-input" value="remember-me" name="remember" checked>
+                    <label for="checkRememberMe" class="custom-control-label">Remember me</label>
+                </div>
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Login">
+                </div>
+                <div class="register-link" id="text">Not a member? <a href="">Register now</a></div>
+                <p>© Student Project made by FHNW BIT students</p>
+            </form>
+
+            <form method="POST" class="register">
+                <div class="field">
+                    <input type="text" placeholder="Username" name="username" required>
+                </div>
+                <div class="field">
+                    <input type="text" placeholder="Firstname" name="firstname" required>
+                </div>
+                <div class="field">
+                    <input type="text" placeholder="Lastname" name="lastname" required>
+                </div>
+                <div class="field">
+                    <input type="email" placeholder="Email Address" name="email" required>
+                </div>
+                <div class="field">
+                    <input type="text" placeholder="Tel 0123456789" name="tel" required>
+                </div>
+                <div class="field">
+                    <input type="password" id="inputPassword" placeholder="Password" name="password" required>
+                    <span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye" onclick="showPassword()"></span>
+                </div>
+                <div class="field">
+                    <input type="password" id="inputRepeatPassword" placeholder="Confirm password" required>
+                    <span toggle="#inputRepeatPassword" class="fa fa-fw fa-eye field-icon toggle-password" id="eye02" onclick="showPassword02()"></span>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck" required >Agree to terms and conditions</label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+
+                <div class="field btn">
+                    <div class="btn-layer"></div>
+                    <input type="submit" value="Sign up" onclick="return Validate()">
+                </div>
+
+                <p>© Student Project made by FHNW BIT students</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="../assets/js/js-admin/admin-register.js"></script>
+<script src="../assets/js/js-customer/cus-login.js"></script>
+<script src="../assets/js/app.js"></script>
+
+<script language="JavaScript">
+    $(document).ready(function () {
+        $("#form").submit(function (event) {
+            loginCustomer($('input[name=email]').val(),
+                $('input[name=password]').val(),
+                $('input[name=remember]').is(":checked"),
+                function (result) {
+                if(result) {
+                    window.location.replace("../");
+                }
+                else {
+                    $("#error-modal").modal('show');
+                    $("#error-text").text("Bad credentials!");
+                }
+            });
+            event.preventDefault();
+        });
+    });
+</script>
+
+<script language="JavaScript">
+    $(document).ready(function () {
+        $("#form").submit(function (event) {
+            registerCustomer($('input[name=username]').val(),
+                $('input[name=firstname]').val(),
+                $('input[name=lastname]').val(),
+                $('input[name=email]').val(),
+                $('input[name=tel]').val(),
+                $('input[name=password]').val(),
+                function (result) {
+                window.location.replace("../");
+            }, function (error) {
+                $("#error-modal").modal('show');
+                $("#error-text").text(error);
+            });
+            event.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>
