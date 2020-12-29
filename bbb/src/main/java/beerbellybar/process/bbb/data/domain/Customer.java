@@ -37,7 +37,11 @@ public class Customer {
 
     public void setId(Long id) {this.id = id;}
 
-    public String getfirstName() {return firstName;}
+    public String getUsername() { return username;}
+
+    public void setUsername() {this.username = username;}
+
+    public String getFirstName() {return firstName;}
 
     public void setFirstName(String name) {this.firstName = firstName;}
 
