@@ -52,60 +52,60 @@
                           <a href="#">
                               <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
                           </a>
-                          <h1>Camila Smith</h1>
-                          <p>c.smith@theEmail.com</p>
+                          <h1 id="customer-name"></h1>
+                          <p id="customer-email"></p>
                       </div>
                       <ul class="list-group list-group-flush">
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap"><a href="/profile/edit"> <i class="fa fa-edit"></i> Edit profile</a></li>
-                          <li id="profile" class="active list-group-item d-flex justify-content-between align-items-center flex-wrap"><a href="/reservation"> <i class="fa fa-user"></i> Reservation</a></li>
+                          <li id="profile" class="active list-group-item d-flex justify-content-between align-items-center flex-wrap"><a href="/reservation"> <i class="fas fa-book-reader"></i> Reservation</a></li>
                       </ul>
                   </div>
               </div>
                 <div class="profile-info col-md-9">
                     <div class ="panel">
                         <div class="row">
-                    <div class="col-md-12 col-sm-12">
-                        <div class="card">
-                            <div class="card-header">My profile</div>
-                            <div class="card-body">
-                                <ul>
-                                    <li>
+                            <div class="col-md-12 col-sm-12">
+                                <div class="card">
+                                <div class="card-header">My profile</div>
+                                <div class="card-body">
+                                <ul id="profileCustomer">
+                                    <li class ="profile-username">
                                         <dl>
                                             <dt>Username</dt>
-                                            <dd>Rabbit</dd>
+                                            <dd id="username"></dd>
                                         </dl>
                                     </li>
                                     <li>
                                         <dl>
                                             <dt>Firstname</dt>
-                                            <dd>Carla</dd>
+                                            <dd id="firstname"></dd>
                                         </dl>
                                     </li>
                                     <li>
                                         <dl>
                                             <dt>Lastname</dt>
-                                            <dd>Smith</dd>
+                                            <dd id="lastname"></dd>
                                         </dl>
                                     </li>
                                     <li>
                                         <dl>
                                             <dt>Email</dt>
-                                            <dd>C.smith@gmail.com</dd>
+                                            <dd id="email"></dd>
                                         </dl>
                                     </li>
                                     <li>
                                         <dl>
                                             <dt>Tel</dt>
-                                            <dd>0412225566</dd>
+                                            <dd id="tel"></dd>
                                         </dl>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div><!--Profile card-->
+                                </div>
+                                </div>
+                            </div><!--Profile card-->
 
-                            <!--Reservation details-->
-                            <div class="col-md-12 col-lg-12">
+                                <!--Reservation details-->
+                                <!--  <div class="col-md-12 col-lg-12">
                                 <div class="card">
                                     <div class="card-header"></div>
                                     <div class="card-body">
@@ -142,9 +142,8 @@
                             </div>
                 </div>
                     </div>
-                </div>
-
-                        <!--Alert delete box-->
+                </div>-->
+                                <!--Alert delete box
                         <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
                             <div class="modal-dialog modal-sm" role="document">
                                 <div class="modal-content">
@@ -157,31 +156,30 @@
                                         <button class="btn btn-primary" type="button" id="deleteDatabtn" data-id="#">Delete </button></div>
                                 </div>
                             </div>
+                        </div>-->
                         </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        </div>
-        </div>
-        </div>
         </div>
     </main>
 
-     <!--Footer-->
-     <footer class="page-footer dark">
+    <!--Footer-->
+    <footer class="page-footer dark">
         <div class="container">
             <div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
                 <div class="col-sm-3">
-                    <h5>Get started</h5> //TODO Section maybe unnecessary
+                    <h5>Get started</h5>
                     <ul>
-                        <li><a href="/home">Home</a></li>
-                        <!-- <li><a href="#">Sign up</a></li> -->
+                        <li><a href="../index/front-page-index.html">Home</a></li>
+                        <li><a href="../index/menu.html">Menu</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>About us</h5>
                     <ul>
-                        <li><a href="/home#about-us">Company Information</a></li>
-                        <li><a href="/home#gallery">Gallery</a></li>
+                        <li><a href="../index/front-page-index.html#about-us">Company Information</a></li>
+                        <li><a href="../index/front-page-index.html#gallery">Gallery</a></li>
                     </ul>
                 </div>
             </div>
@@ -190,12 +188,34 @@
             <p>© Student Project made by FHNW BIT students</p>
         </div>
     </footer>
+
     <script src="../assets/js/js-front-page/jquery.min.js"></script>
     <script src="../assets/bootstrap/bootstrap-front-page/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="../assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="../assets/js/js-front-page/theme.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</body>
 
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $(loadCusProfile());
+
+                function loadCusProfile(){
+                    getCusProfile(function (result){
+                    $("#profileCustomer").empty();
+                    $.each(result, function (i, item){
+                        $("#profileCustomer")
+                            .append($("<dd>").text(item.username)   + "</dd>")
+                            .append($("<dd>").text(item.firstname)  + "</dd>")
+                            .append($("<dd>").text(item.lastname)   + "</dd>")
+                            .append($("<dd>").text(item.email)      + "</dd>")
+                            .append($("<dd>").text(item.tel)        + "</dd>")
+                    });
+                });
+        }
+        });
+    </script>
+
+
+</body>
 </html>
