@@ -14,8 +14,9 @@
     <link href="../assets/fonts/fonts-admin/fontawesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/css-customer/cus-profile.css">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 </head>
 
@@ -195,6 +196,16 @@
     <script src="../assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="../assets/js/js-front-page/theme.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!--<script language="JavaScript">
+        validateCusLogin(function (result) {
+            if (!result) {
+                window.location.replace("../login");
+            }
+        });
+    </script>-->
 
     <script language="JavaScript">
         $(document).ready(function () {
@@ -202,19 +213,36 @@
 
                 function loadCusProfile(){
                     getCusProfile(function (result){
-                    $("#profileCustomer").empty();
-                    $.each(result, function (i, item){
-                        $("#profileCustomer")
-                            .append($("<dd>").text(item.username)   + "</dd>")
-                            .append($("<dd>").text(item.firstname)  + "</dd>")
-                            .append($("<dd>").text(item.lastname)   + "</dd>")
-                            .append($("<dd>").text(item.email)      + "</dd>")
-                            .append($("<dd>").text(item.tel)        + "</dd>")
+                    $("#username").empty();
+                    $("#firstname").empty();
+                    $("#lastname").empty();
+                    $("#email").empty();
+                    $("#tel").empty();
+
+                    $("#username").html(item.username);
+                    $("#username").html(item.firstname);
+                    $("#username").html(item.lastname);
+                    $("#username").html(item.email);
+                    $("#username").html(item.tel);
                     });
-                });
-        }
+                };
         });
     </script>
+
+    <!-- Logic for entering data into the required rows
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $(loadProfile());
+
+            function loadProfile() {
+                $("#username").html("Rey");
+                $("#firstname").html("Paul");
+                $("#lastname").html("Smith");
+                $("#email").html("paul@gmail.com");
+                $("#tel").html("0800100100");
+            }
+        });
+    </script>-->
 
 
 </body>

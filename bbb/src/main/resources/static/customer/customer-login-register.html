@@ -28,7 +28,7 @@
 
         <!--Login form-->
         <div class="form-inner">
-            <form action="cus-profile.html" class="login">
+            <form action="cus-profile.html" class="login" id="cuslogin">
                 <div class="field">
                     <input type="text" placeholder="Email Address" name="email" required>
                 </div>
@@ -50,7 +50,7 @@
                 <p>© Student Project made by FHNW BIT students</p>
             </form>
 
-            <form method="POST" class="register">
+            <form method="POST" class="register" id="cusregister">
                 <div class="field">
                     <input type="text" placeholder="Username" name="username" required>
                 </div>
@@ -92,14 +92,15 @@
     </div>
 </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
 <script src="../assets/js/js-admin/admin-register.js"></script>
 <script src="../assets/js/js-customer/cus-login.js"></script>
 <script src="../assets/js/app.js"></script>
+<script src="../assets/js/script.js"></script>
 
 <script language="JavaScript">
     $(document).ready(function () {
-        $("#form").submit(function (event) {
+        $("#cuslogin").submit(function (event) {
             loginCustomer($('input[name=email]').val(),
                 $('input[name=password]').val(),
                 $('input[name=remember]').is(":checked"),
@@ -118,8 +119,16 @@
 </script>
 
 <script language="JavaScript">
+    validateCusLogin(function (result) {
+        if (result) {
+            window.location.replace("../");
+        }
+    });
+</script>
+
+<script language="JavaScript">
     $(document).ready(function () {
-        $("#form").submit(function (event) {
+        $("#cusregister").submit(function (event) {
             registerCustomer($('input[name=username]').val(),
                 $('input[name=firstname]').val(),
                 $('input[name=lastname]').val(),

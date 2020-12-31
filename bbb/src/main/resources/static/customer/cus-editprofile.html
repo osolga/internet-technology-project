@@ -210,10 +210,11 @@
                     <div class="col-12">
                       <div class="card-body">
                         <div class="px-xl-3">
+                          <!-- already have a logout button
                           <button class="btn btn-block btn-secondary">
                             <i class="fa fa-sign-out"></i>
                             <span>Logout</span>
-                          </button>
+                          </button>-->
                         </div>
                       </div>
                     </div>
@@ -263,13 +264,22 @@
 
 
     <script src="../assets/js/app.js"></script>
-    <script language="JavaScript">
+    <script src="../assets/js/js-customer/cus-editProfile.js"></script>
+    <script src="../assets/js/js-front-page/jquery.min.js"></script>
+    <script src="../assets/bootstrap/bootstrap-front-page/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="../assets/js/js-front-page/smoothproducts.min.js"></script>
+    <script src="../assets/js/js-front-page/theme.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!--<script language="JavaScript">
         validateCusLogin(function (result) {
             if (!result) {
                 window.location.replace("../login");
             }
         });
-    </script>
+    </script>-->
+
     <script language="JavaScript">
         $(document).ready(function () {
             getCusProfile(function (result) {
@@ -286,7 +296,7 @@
                     $('input[name=email]').val(),
                     $('input[name=newPassword]').val(),
                     function (result) {
-                    window.location.replace("/customer");
+                    window.location.replace("/profile");
                 }, function (error) {
                     $("#error-modal").modal('show');
                     $("#error-text").text(error);
@@ -296,12 +306,7 @@
         });
     </script>
 
-    <script src="../assets/js/js-customer/cus-editProfile.js"></script>
-    <script src="../assets/js/js-front-page/jquery.min.js"></script>
-    <script src="../assets/bootstrap/bootstrap-front-page/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="../assets/js/js-front-page/smoothproducts.min.js"></script>
-    <script src="../assets/js/js-front-page/theme.js"></script>
+
 </body>
 
 </html>

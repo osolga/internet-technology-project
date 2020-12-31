@@ -11,7 +11,7 @@ public class ReservationController {
 
     @GetMapping
     public String getReservationView() {
-        return "reservation.html";
+        return "cus-reservations.html";
     }
 
     @GetMapping("/create")

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table align="center">
+<thead>
+<tr align="center">
+    <th>Clones</th>
+</tr>
+</thead>
+<tbody  id="data">
+<tr align="center">
+    <td>Well Hello there</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+<script language="JavaScript">
+    $(document).ready(function () {
+        console.log( "ready!" );
+        setTimeout(function() {
+            $(loaddata());
+
+            function loaddata() {
+                $(data).append("<tr align='center'><td>General Kenobi")
+                    .append("<tr><td><img src='https://media0.giphy.com/media/UIeLsVh8P64G4/giphy.gif?cid=ecf05e47hidi0mirqkxn5mu9zz408obezf7mwqjh5k6iedfh&rid=giphy.gif' alt='GG'/></td></tr>");
+            }
+
+        }, 2000);
+
+    });
+
+</script>
+
+</body>
+</html>

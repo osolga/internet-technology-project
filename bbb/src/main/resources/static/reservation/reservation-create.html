@@ -28,16 +28,16 @@
             <div
                 class="collapse navbar-collapse text-right" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                  <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" id="registration" href="../index/menu.html">Menu</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html#gallery">Gallery</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html#about-us">About Us</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html#contact-us">Contact Us</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="/home">Home</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="/menu">Menu</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="/home#gallery">Gallery</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="/home#about-us">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="/home#contact-us">Contact Us</a></li>
                              
                 </ul>
 
-                <a class="nav-link active" href="/login">
-                    <button class="btn btn-primary button-registration" type="button"><strong>SIGN UP/ LOG IN</strong>
+                <a class="nav-link active" href="/logout">
+                    <button class="btn btn-primary button-registration" type="button"><strong>Logout</strong>
                     </button>
                 </a>
             </div>
@@ -61,6 +61,7 @@
               <h4 class="mb-3">Reservation</h4>
               <form class="needs-validation" novalidate>
                 <div class="row">
+                  <!-- Don't need it only logged in Customers can make a reservation
                   <div class="col-md-6 mb-3">
                     <label for="firstName" class="form-label">First name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required>
@@ -92,8 +93,17 @@
                     <div class="invalid-feedback">
                       Please enter your mobile phone.
                     </div>
-                  </div>
+                  </div>-->
+
+                    <div class="mb-3">
+                        <label for="guests" class="form-label">Number of guests</label>
+                        <input type="number" class="form-control" id="guests" name="guests" placeholder="" min="1" max="10" required>
+                        <div class="invalid-feedback">
+                            Please select the number of guests.
+                        </div>
+                    </div>
       
+                  <!-- Should be able to enter a int
                   <div class="row">
                     <div class="col-md-5 mb-3"> 
                       <label for="guests">Number of guests</label>
@@ -109,7 +119,7 @@
                       </select>
                       <div class="invalid-feedback">Please select the number of guests.</div>
                   </div>
-                  </div>
+                  </div>-->
 
                   <div class="form-group mb-3">
                     <div class="input-group mb-3">
@@ -119,6 +129,7 @@
                       </div>
                 </div>
 
+                <!-- At the moment time can't be selected only a date
                 <div class="form-group mb-3">
                   <div class="input-group input-daterange">
                       <div class="input-group-prepend"><span class="input-group-text">Time</span>
@@ -133,7 +144,7 @@
                       </select>
                     </div>
               </div>
-            </div>
+            </div> -->
 
                 <!-- <div class="form-group mb-3">
                   <label for="remarks" class="form-label">Anything You would like to add?</label>
@@ -157,15 +168,15 @@
                 <div class="col-sm-3">
                     <h5>Get started</h5>
                     <ul>
-                      <li><a href="../index/front-page-index.html">Home</a></li>
-                      <li><a href="../index/menu.html">Menu</a></li>
+                      <li><a href="/home">Home</a></li>
+                      <li><a href="/menu">Menu</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>About us</h5>
                     <ul>
-                        <li><a href="../index/front-page-index.html#about-us">Company Information</a></li>
-                        <li><a href="../index/front-page-index.html#gallery">Gallery</a></li>
+                        <li><a href="/home#about-us">Company Information</a></li>
+                        <li><a href="/home#gallery">Gallery</a></li>
                     </ul>
                 </div>
             </div>
@@ -185,13 +196,38 @@
 
 <!-- datePicker -->
     <script src="../assets/js/js-datePicker/jquery.min.js"></script>
-              <script src="../assets/js/js-datePicker/smart-forms.min.js"></script>
-              <script src="../assets/js/js-datePicker/datepicker.js"></script>
-            
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-              <script src="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/lightpick.min.js"></script>
+    <script src="../assets/js/js-datePicker/smart-forms.min.js"></script>
+    <script src="../assets/js/js-datePicker/datepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/lightpick.min.js"></script>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!--<script language="JavaScript">
+        validateCusLogin(function (result) {
+            if (!result) {
+                window.location.replace("../login");
+            }
+        });
+    </script>-->
+
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $("#form").submit(function (event) {
+                postReservation(getReservationJSON(null, $("input[numPeple=numPeople]").val(), $("input[reservationTime=reservationTime]").val()), function (result) {
+                    window.location.replace("/resrvation");
+                }, function (error) {
+                    $("#error-modal").modal('show');
+                    $("#error-text").text(error);
+                });
+                evennt.preventDefault();
+            });
+        });
+    </script>
 
 
+    <!-- Not needed maybe for expansion to allow non logged in users to make a reservation
     <script language="JavaScript">
       $(document).ready(function () {
           $("#form").submit(function (event) {
@@ -206,7 +242,7 @@
               event.preventDefault();
           });
       });
-    </script>
+    </script>-->
 
 </body>
 

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap-front-page/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="../assets/fonts/fonts-front-page/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="../assets/css/css-front-page/smoothproducts.css">
+    <link rel="stylesheet" href="../assets/css/css-front-page/menu-page.css">
+    <link href="../assets/fonts/fonts-admin/fontawesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/css-customer/cus-profile.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <!--Main Menubar-->
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="/home"><img src="../assets/img/img-front-page/logo.png" style="width: 50px;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div
+                class="collapse navbar-collapse text-right" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/home#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/home#about-us">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/home#contact-us">Contact Us</a></li>
+                </ul>
+
+
+                <a class="nav-link active" href="/logout">
+                    <button class="btn btn-primary button-registration" type="button"><strong>Logout</strong>
+                    </button>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="page landing-page">
+        <div id="block" class="container">
+            <div class="row">
+
+                <!-- for top-margin -->
+                <div class="profile-info col-md-9"></div>
+
+
+                            <!--Reservation details-->
+                            <div class="col-md-12 col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">My reservations</div>
+                                    <div class="card-body">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-hover" id="dataTables" width="100%" >
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col" width="200px">Reservation ID </th>
+                                                    <th scope="col">Date</th>
+                                                    <!-- <th scope="col">Time </th> -->
+                                                    <th scope="col">Table ID</th>
+                                                    <th scope="col">Guests</th>
+                                                    <th scope="col"></th>
+
+                                                </tr>
+                                                </thead>
+
+                                                <tbody id="tableReservationData">
+                                                <!-- <tr>
+                                                    <td scope="row" data-label="Reservation ID">125</td>
+                                                    <td data-label="Date">10 Dec 2020</td>
+                                                    <td data-label="Time">19:00</td>
+                                                    <td data-label="Table ID">3</td>
+                                                    <td data-label="Table ID">5</td>
+                                                    <td data-label="">
+                                                        <button class ="btn btn-outline-danger btn-rounded" data-target="#confirm-modal" data-toggle="modal" data-id =""><i class="fas fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td scope="row" data-label="Reservation ID">457</td>
+                                                    <td data-label="Date">30 Dec 2021</td>
+                                                    <td data-label="Time">20:00</td>
+                                                    <td data-label="Table ID">7</td>
+                                                    <td data-label="Table ID">2</td>
+                                                    <td data-label="">
+                                                        <button class ="btn btn-outline-danger btn-rounded" data-target="#confirm-modal" data-toggle="modal" data-id =""><i class="fas fa-trash"></i></button>
+                                                    </td>
+                                                </tr> -->
+
+                                                </tbody>
+                                            </table>
+                                            <div class="container-md" id="gotoReservation">
+                                                <a class="btn btn-primary btn-reservation" id="cus-res-btn" href="/profile" role="button">Back to My Profile</a>
+                                                <a class="btn btn-primary btn-reservation" href="/reservation/create" role="button">New Reservation</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                </div>
+
+                        <!--Alert delete box-->
+                        <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4>Deletion of a <strong>reservation</strong>.</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                    <div class="modal-body">
+                                        <p>Do you want to delete the reservation?</p>
+                                    </div>
+                                    <div class="modal-footer"><button class="btn btn-light" type="button" id="cancelDeletebtn" data-dismiss="modal">Cancel </button>
+                                        <button class="btn btn-primary" type="button" id="deleteDatabtn" data-id="#">Delete </button></div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </main>
+
+     <!--Footer-->
+     <footer class="page-footer dark">
+        <div class="container">
+            <div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
+                <div class="col-sm-3">
+                    <h5>Get started</h5> 
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/menu">Menu</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="/home#about-us">Company Information</a></li>
+                        <li><a href="/home#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© Student Project made by FHNW BIT students</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/js-front-page/jquery.min.js"></script>
+    <script src="../assets/bootstrap/bootstrap-front-page/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="../assets/js/js-front-page/smoothproducts.min.js"></script>
+    <script src="../assets/js/js-front-page/theme.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!--<script language="JavaScript">
+        validateCusLogin(function (result) {
+            if (!result) {
+                window.location.replace("../login");
+            }
+        });
+    </script>-->
+
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $(loadReservation());
+
+            function loadReservation() {
+                getReservations(function (result) {
+                    $("#tableReservationData").empty();
+                    $.each(result, function (i, item) {
+                        $("#tableReservationData").append($("<tr>").append($("<td>").text(item.id))
+                            .append($("<td>").text(item.reservationtime))
+                            .append($("<td>").text(item.barTable))
+                            .append($("<td>").text(item.numPeople))
+                            .append($("<td>\n" + "<button className=\"btn btn-outline-danger btn-rounded\" data-target=\"#confirm-modal\"" +
+                                "data-toggle=\"modal\" data-id=\"" + item.id + "\"><i className=\"fas fa-trash\"></i></button>\n" + "</td></tr>")));
+                    });
+                });
+            }
+
+            $("#deleteDatabtn").click(function () {
+                deleteReservation($(this).attr("data-id"), function (result) {
+                    $("#confirm-modal").modal("hide");
+                    loadReservation();
+                });
+            });
+        });
+    </script>
+
+    <!-- How to add new lines for entries
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $(loadData());
+            console.log( "ready!" )
+
+            function loadData() {
+                $("#tableReservationData").append($("<tr>").append($("<td>").text("1")).append($("<td>").text("122")).append($("<td>").text("10.12.20"))
+                .append($("<td>").text("5")).append($("<td>").text("4")));
+            }
+        });
+    </script>-->
+</body>
+
+</html>
