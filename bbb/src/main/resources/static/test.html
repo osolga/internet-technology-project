@@ -2,40 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Star Wars</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="../assets/bootstrap/bootstrap-front-page/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="../assets/fonts/fonts-front-page/simple-line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="../assets/css/css-front-page/smoothproducts.css">
+    <link rel="stylesheet" href="../assets/css/css-front-page/event.css">
+    <link rel="stylesheet" href="../assets/css/css-front-page/menu-page.css">
 </head>
 <body>
-<table align="center">
-<thead>
-<tr align="center">
-    <th>Clones</th>
-</tr>
-</thead>
-<tbody  id="data">
-<tr align="center">
-    <td>Well Hello there</td>
-</tr>
 
-</tbody>
-</table>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
-<script language="JavaScript">
+<main>
+    <div>
+    <table align="center">
+        <thead>
+            <tr align="center">
+                <th style="font-size: 90px">Droids</th>
+            </tr>
+        </thead>
+
+        <tbody  id="data">
+            <tr align="center">
+                <td style="font-size: 40px"><b>Well Hello there.</b></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <div>
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+            <div class="container"><a class="navbar-brand logo" href="/home"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><img id="logo-small" src="../assets/img/img-front-page/logo.png">
+                <div
+                        class="collapse navbar-collapse text-right" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/menu">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#gallery">Gallery</a></li>
+                        <li class="nav-item" id="Empire"><a class="nav-link active" href="#about-us">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#contact-us">Contact Us</a></li>
+                    </ul>
+        <div id="Confederacy" style="text-align: center"><p>Filler</p><p id="Confederacy">The Confederacy of Independent Systems will win</p><p>Filler</p></div>
+        <div id="Republic" style="text-align: center">The Galactic Republic will win</div>
+    </div>
+
+</main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <script language="JavaScript">
     $(document).ready(function () {
         console.log( "ready!" );
         setTimeout(function() {
-            $(loaddata());
+            $(loadtext());
 
-            function loaddata() {
-                $(data).append("<tr align='center'><td>General Kenobi")
-                    .append("<tr><td><img src='https://media0.giphy.com/media/UIeLsVh8P64G4/giphy.gif?cid=ecf05e47hidi0mirqkxn5mu9zz408obezf7mwqjh5k6iedfh&rid=giphy.gif' alt='GG'/></td></tr>");
+            function loadtext() {
+                $("#data").append("<tr align='center' id='text'><td style='font-size: 40px; padding-top: 50px'>General Kenobi!")
             }
 
+            setTimeout(function () {
+                $(loadgif());
+
+                function loadgif() {
+                    $("#data").append("<tr align='center' id='gif'><td><img src='https://media2.giphy.com/media/UIeLsVh8P64G4/giphy.gif' alt='General Grievous'></td></tr>")
+                }
+            }, 500);
+
         }, 2000);
-
     });
+    </script>
 
-</script>
-
+    <script language="JavaScript">
+        $(document).ready(function () {
+            var nums = Math.floor(Math.random()*10);
+            var nums = 5;
+            $("#Confederacy").toggle(nums >=5);
+            $("#Republic").toggle(nums <=5);
+            $("#Empire").toggle(nums >5);
+        })
+    </script>
 </body>
 </html>

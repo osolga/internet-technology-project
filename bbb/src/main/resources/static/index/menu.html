@@ -26,11 +26,16 @@
                     <li class="nav-item"><a class="nav-link active" href="/home#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/home#about-us">About Us</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/home#contact-us">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link active loggedIn" href="/profile">Profile</a></li>
                 </ul>
                 
                
                 <a class="nav-link active" href="/login">
                     <button class="btn btn-primary button-registration" type="button"><strong>SIGN UP/ LOG IN</strong>
+                    </button>
+                </a>
+                <a class="nav-link active loggedIn" href="/logout">
+                    <button class="btn btn-primary button-registration" type="button"><strong>Logout</strong>
                     </button>
                 </a>
 
@@ -108,6 +113,19 @@
     <script src="../assets/js/js-front-page/theme.js"></script>
     <script src="../assets/js/app.js"></script>
     <script src="../assets/js/script.js"></script>
+
+    <script language="JavaScript">
+        validateCusLogin(function (result) {
+            if (result) {
+                $(".loggedIn").show();
+                $(".loggedOut").hide();
+            } else {
+                $(".loggedOut").show();
+                $(".loggedIn").hide();
+            }
+        });
+    </script>
+
 </body>
 
 </html>
