@@ -40,17 +40,38 @@
     </nav>
 
 <!--Customer edit profile-->
-<main class="page landing-page">           
+
+<main class="page landing-page">
     <div id="block" class="container">
         <div  class="row justify-content-center">
-            
-            
               <div class="col">
                 <div class="row">
                   <div class="col mb-3">
                     <div class="card">
                       <div class="card-body">
-                        <div class="e-profile">
+                          <!--Alert change successful-->
+                          <div class="alert_wrapper">
+                              <div class="alert_backdrop"></div>
+                              <div class="alert_inner">
+                                  <div class="alert_item alert_success">
+                                      <div class="icon data_icon">
+                                          <i class="fas fa-check-circle"></i>
+                                      </div>
+                                      <div class="data">
+                                          <p id="alertOK" class="title"><strong>Success:</strong><br>Your profile is already changed</p>
+                                          <br><a class="back_to_profile" href="/cus-profile.html">Go back to my profile</a>
+                                      </div>
+                                      <div class="icon close">
+                                          <i class="fas fa-times"></i>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+
+
+
+                          <div class="e-profile">
                           <div class="row">
                             <div class="col-12 col-sm-auto mb-3">
                               <div class="mx-auto" style="width: 140px;">
@@ -61,11 +82,11 @@
                             </div>
                             <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                               <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Camila Smith</h4>
-                                <p class="mb-0">@LoveLy</p>
-                                <div class="text-muted"><small>Last seen 2 hours ago</small></div>
-                                <div class="mt-2">
-                                  <button class="btn btn-primary" id="btnEditPhoto" type="button">
+                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">Firstname Lastname</h4>
+                                <p class="mb-0">@Username</p>
+                                <div class="text-muted"><small></small></div>
+                                <div class="mt-2 py-3">
+                                  <button class="btn btn-primary py-2" id="btnEditPhoto" type="button">
                                     <i class="fa fa-fw fa-camera"></i>
                                     <span>Change Photo</span>
                                   </button>
@@ -73,11 +94,11 @@
                               </div>
                               <div class="text-center text-sm-right">
                                 <span class="badge badge-secondary">Customer</span>
-                                <div class="text-muted"><small>Joined 09 Sep 2020</small></div>
+                                <div class="text-muted"><small></small></div>
                               </div>
                             </div>
                           </div>
-                          
+
                           <ul class="nav nav-tabs">
                             <!-- <li class="nav-item"><a href="" class="active nav-link">Settings</a></li> -->
                           </ul>
@@ -91,14 +112,14 @@
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Firstname</label>
-                                          <input class="form-control" type="text" name="firstname" placeholder="Camila" value="" name="firstname" required>
+                                          <input class="form-control" type="text" name="firstname" placeholder="" value="" name="firstname" required>
                                         </div>
-                                        
+
                                       </div>
                                       <div class="col">
                                         <div class="form-group">
                                           <label>Lastname</label>
-                                          <input class="form-control" type="text" name="lastname" placeholder="Smith" value="" name="lastname" required>
+                                          <input class="form-control" type="text" name="lastname" placeholder="" value="" name="lastname" required>
                                         </div>
                                       </div>
                                     </div>
@@ -192,32 +213,35 @@
                                     </div>
                                   </div>
                                 </div>
-                               
-                                  <div class="col d-flex justify-content-end">
-                                    <button class="btn btn-primary" id="btnSave" type="submit">Save Changes</button>
+
+
+                                    <div class="col d-flex justify-content-center">
+                                        <a href="/cus-profile.html" style="margin:5px;" class="btn btn-primary" role="button" id="btnCancel">Cancel</a>
+                                      <button style="margin:5px;" class="btn btn-primary btn_saveChange" id="btnSave" type="button" data-target="#confirm-changeProfile" data-toggle="modal" data-id ="">Save Changes</button>
                                   </div>
-                               
+
                               </form>
-            
+
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-            
-                  <div class="col-12 col-md-3 mb-3">
+
+
+                    <!--<div class="col-12 col-md-3 mb-3">
                     <div class="col-12">
                       <div class="card-body">
                         <div class="px-xl-3">
-                          <!-- already have a logout button
+                          already have a logout button
                           <button class="btn btn-block btn-secondary">
                             <i class="fa fa-sign-out"></i>
                             <span>Logout</span>
-                          </button>-->
-                        </div>
-                      </div>
-                    </div>
+                          </button>
+                        </div>-->
+                </div>
+              </div>
                     <!--Support
                     <div class="card">
                       <div class="card-body">
@@ -228,7 +252,7 @@
                     </div>-->
                   </div>
                 </div>
-            
+
               </div>
         </div>
     </div>
@@ -271,6 +295,7 @@
     <script src="../assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="../assets/js/js-front-page/theme.js"></script>
     <script src="../assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <!--<script language="JavaScript">
         validateCusLogin(function (result) {
@@ -306,7 +331,5 @@
         });
     </script>
 
-
 </body>
-
 </html>
