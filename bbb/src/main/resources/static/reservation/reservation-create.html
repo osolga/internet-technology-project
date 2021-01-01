@@ -13,12 +13,8 @@
     <link rel="stylesheet" href="../assets/css/css-front-page/menu-page.css">
     <link rel="stylesheet" href="../assets/css/css-front-page/checkout.css">
 
-
     <script src="jquery-3.5.1.min.js"></script>
 
-  <!-- dataPicker -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/css/lightpick.min.css">
-   
 </head>
 
 <body>
@@ -28,15 +24,14 @@
             <div
                 class="collapse navbar-collapse text-right" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                  <li class="nav-item"><a class="nav-link active" href="/home">Home</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="/menu">Menu</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="/home#gallery">Gallery</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="/home#about-us">About Us</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="/home#contact-us">Contact Us</a></li>
-                             
+                    <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link" id="registration" href="../index/menu.html">Menu</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html#gallery">Gallery</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html#about-us">About Us</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="../index/front-page-index.html#contact-us">Contact Us</a></li>  
                 </ul>
 
-                <a class="nav-link active" href="/logout">
+                <a class="nav-link active" href="../index/front-page-index.html">
                     <button class="btn btn-primary button-registration" type="button"><strong>Logout</strong>
                     </button>
                 </a>
@@ -44,139 +39,69 @@
         </div>
     </nav>
 
-    <main class="page landing-page">
-      <div class="container">
-        <div class="text-center">
-            <h2>Checkout form</h2>
-            <p class="lead"></p>
-        </div>
-    
-      
-        <div class="row g-3 needs-validation">
-          <div class="col-md-5 col-lg-4 order-md-last">
-          </div>
+    <!--Reservations-->
+
+     <main class="page landing-page">
+        <div id="block" class="container container-m mb-5">
+          
+                      <div class="card w-50 card-center">
+                        <div class="card-body">
+
+                          <h5 class="card-title">Reservation</h5>
+                          <p class="card-text">Please, choose the number of guests attending (up to 10) and the preferred date.</p>
+
+                          <hr> 
+
+                          <form class="needs-validation" novalidate>
+                
+                            <div class="col-md-8 mb-3">
+                                <label for="guests" class="form-label">Number of guests</label>
+                                <input type="number" class="form-control" id="guests" name="guests" placeholder="" min="1" max="10" required>
+                                <div class="invalid-feedback">
+                                    Please enter the number of guests.
+                                </div>
+                            </div>
         
-          <div class="col-md-8 order-md-1">
-              
-              <h4 class="mb-3">Reservation</h4>
-              <form class="needs-validation" novalidate>
-                <div class="row">
-                  <!-- Don't need it only logged in Customers can make a reservation
-                  <div class="col-md-6 mb-3">
-                    <label for="firstName" class="form-label">First name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                      Valid first name is required.
-                    </div>
-                  </div>
-      
-                  <div class="col-md-6 mb-3">
-                    <label for="lastName" class="form-label">Last name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="" required="">
-                    <div class="invalid-feedback">
-                      Valid last name is required.
-                    </div>
-                  </div>
-                </div>
-      
-                  <div class="mb-3">
-                    <label for="email" class="form-label">Email <span class="text-muted"></span></label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="" required>
-                    <div class="invalid-feedback">
-                      Please enter a valid email address.
-                    </div>
-                  </div>
-      
-                  <div class="mb-3">
-                    <label for="phone" class="form-label">Mobile Phone</label>
-                    <input type="text" class="form-control" id="phone" name="phone" placeholder="" required>
-                    <div class="invalid-feedback">
-                      Please enter your mobile phone.
-                    </div>
-                  </div>-->
+                            <div class="col-md-8 mb-3">
+                                <label for="validationCustom-DOB" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="datePicker" name="date" required>
+                                <div class ="invalid-feedback">Please enter the preferred date.</div>
+                            </div>
+                            
+                          
+                      <div class="col-md-6 mb-3">
+                        <div class="form-group mt-4 mb-5"><button class="btn btn-primary btn-block" type="submit">Send</button></div>
+                        <a href="../reservation/reservation-create copy.html" class="btn btn-primary btn-block nav-link active" type="button">Cancel</a> 
+                        <a href="../customer/cus-profile.html" class="btn btn-primary btn-block nav-link active" type="button">Go to My Profile</a>
+                    </div> 
+   
+                    <!-- <a class="btn btn-primary btn-reservation mr-3" href="/reservation/create" role="button">Cancel</a>
+                    <a class="btn btn-primary btn-reservation mr-3" href="/reservation/create" role="button">Send</a> -->
 
-                    <div class="mb-3">
-                        <label for="guests" class="form-label">Number of guests</label>
-                        <input type="number" class="form-control" id="guests" name="guests" placeholder="" min="1" max="10" required>
-                        <div class="invalid-feedback">
-                            Please select the number of guests.
-                        </div>
-                    </div>
-      
-                  <!-- Should be able to enter a int
-                  <div class="row">
-                    <div class="col-md-5 mb-3"> 
-                      <label for="guests">Number of guests</label>
-                      <select class="custom-select d-block w-100" id="guests" name="guests" required>
-                        <option selected disabled value="">Select...</option>
-                            <option value="1"> 1 </option>
-                            <option value="2"> 2 </option>
-                            <option value="3"> 3 </option>
-                            <option value="4"> 4</option>
-                            <option value="5"> 5</option>
-                            <option value="6"> more than 5</option>
-                            <option value="7"> more than 10</option>
-                      </select>
-                      <div class="invalid-feedback">Please select the number of guests.</div>
-                  </div>
-                  </div>-->
+                      </form>
 
-                  <div class="form-group mb-3">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend"><span class="input-group-text">Date</span>
                         </div>
-                        <input class="form-control" type="text" id="datePicker" name="date" >
                       </div>
-                </div>
-
-                <!-- At the moment time can't be selected only a date
-                <div class="form-group mb-3">
-                  <div class="input-group input-daterange">
-                      <div class="input-group-prepend"><span class="input-group-text">Time</span>
-                      <select class="custom-select d-block w-100" id="time" name="time" required>
-                        <option selected disabled value="">Select...</option>
-                        <option value="1"> 5 pm </option>
-                        <option value="2"> 6 pm </option>
-                        <option value="3"> 7 pm </option>
-                        <option value="4"> 8 pm</option>
-                        <option value="5"> 9 pm</option>
-                        <option value="6"> 10 pm</option>
-                      </select>
                     </div>
-              </div>
-            </div> -->
+     
+    </main>
 
-                <!-- <div class="form-group mb-3">
-                  <label for="remarks" class="form-label">Anything You would like to add?</label>
-                  <textarea class="form-control" id="remarks" placeholder=""></textarea>
-                </div> -->
-
-                <hr class="mb-4">
-
-                <div class="form-group mt-4"><button class="btn btn-primary btn-block" type="submit" id="reservationButton">Send</button></div>
-
-              </form>
-            </div>
-        </div>
-  
-    </main>  
-
-    <!--Footer-->
-    <footer class="page-footer dark">
+     <!--Footer-->
+     <footer class="page-footer dark">
         <div class="container">
             <div class="row row-cols-sm-2 row-cols-md-2 row-cols-lg-2 row-cols-xl-2">
                 <div class="col-sm-3">
                     <h5>Get started</h5>
                     <ul>
-                      <li><a href="/home">Home</a></li>
-                      <li><a href="/menu">Menu</a></li>
+                      <li><a href="../index/front-page-index.html">Home</a></li>
+                      <li><a href="../index/menu.html">Menu</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>About us</h5>
                     <ul>
-                        <li><a href="/home#about-us">Company Information</a></li>
-                        <li><a href="/home#gallery">Gallery</a></li>
+                        <li><a href="../index/front-page-index.html#about-us">Company Information</a></li>
+                        <li><a href="../index/front-page-index.html#gallery">Gallery</a></li>
                     </ul>
                 </div>
             </div>
@@ -194,15 +119,7 @@
     <script src="../assets/js/js-front-page/smoothproducts.min.js"></script>
     <script src="../assets/js/js-front-page/theme.js"></script>
 
-<!-- datePicker -->
-    <script src="../assets/js/js-datePicker/jquery.min.js"></script>
-    <script src="../assets/js/js-datePicker/smart-forms.min.js"></script>
-    <script src="../assets/js/js-datePicker/datepicker.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lightpick@1.3.4/lightpick.min.js"></script>
 
-    <script src="../assets/js/app.js"></script>
-    <script src="../assets/js/script.js"></script>
 
     <!--<script language="JavaScript">
         validateCusLogin(function (result) {
