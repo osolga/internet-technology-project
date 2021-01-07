@@ -31,6 +31,11 @@ public class CustomerController {
         return ResponseEntity.ok().build();
     }
 
+    @GetMapping("/profile/view")
+    public String getProfileView() {
+        return "cus-profile.html";
+    }
+
     @GetMapping("/profile")
     public  @ResponseBody Customer getProfile() {
         return customerService.getCurrentCustomer();

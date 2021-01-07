@@ -10,13 +10,13 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Order {
+public class BarOrder {
 
     @Id
     @GeneratedValue
     private Long id;
     private String orderTime;
-    @OneToMany(mappedBy = "order")
+    @OneToMany(mappedBy = "barOrder")
     @JsonIgnore
     private List<MenuItem> menuItems;
 

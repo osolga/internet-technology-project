@@ -15,9 +15,9 @@ public class Bills {
     private Double tab_amount;
     private Double discount;
     private String bill_date_due;
-    @OneToMany(mappedBy = "bills")
+    @OneToMany
     @JsonIgnore
-    private List<Order> order;
+    private List<BarOrder> barOrder;
     @OneToOne
     @JsonIgnore
     private Admin admin;
@@ -37,9 +37,9 @@ public class Bills {
 
     public void setDiscount(Double discount) {this.discount = discount;}
 
-    public List<Order> getOrder() {return order;}
+    public List<BarOrder> getOrder() {return barOrder;}
 
-    public void setOrder(List<Order> order) {this.order = order;}
+    public void setOrder(List<BarOrder> barOrder) {this.barOrder = barOrder;}
 
     public Admin getAdmin() {return admin;}
 

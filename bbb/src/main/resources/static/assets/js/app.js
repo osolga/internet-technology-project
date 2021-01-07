@@ -200,7 +200,7 @@ function putCusProfile(firstname, lastname, email, tel, newPassword, callbackSuc
             "lastname" : lastname,
             "email": email,
             "tel" : tel,
-            "newPassword": newPassword
+            "password": newPassword
         }),
         success: function (data, textStatus, response) {
             callbackSuccess(true);

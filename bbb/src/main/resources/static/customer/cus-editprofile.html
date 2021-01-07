@@ -28,7 +28,7 @@
                     <li class="nav-item"><a class="nav-link active" href="/home#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/home#about-us">About Us</a></li>
                     <li class="nav-item"><a class="nav-link active" href="/home#contact-us">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/profile">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/profile/view">Profile</a></li>
                 </ul>
 
 
@@ -217,7 +217,7 @@
 
 
                                     <div class="col d-flex justify-content-center">
-                                        <a href="/profile" style="margin:5px;" class="btn btn-primary" role="button" id="btnCancel">Cancel</a>
+                                        <a href="/profile/view" style="margin:5px;" class="btn btn-primary" role="button" id="btnCancel">Cancel</a>
                                       <button style="margin:5px;" class="btn btn-primary btn_saveChange" id="btnSave" type="button" data-target="#confirm-changeProfile" data-toggle="modal" data-id ="">Save Changes</button>
                                   </div>
 
@@ -319,7 +319,7 @@
                     $('input[name=email]').val(),
                     $('input[name=newPassword]').val(),
                     function (result) {
-                    window.location.replace("/profile");
+                    window.location.replace("/profile/view");
                 }, function (error) {
                     $("#error-modal").modal('show');
                     $("#error-text").text(error);

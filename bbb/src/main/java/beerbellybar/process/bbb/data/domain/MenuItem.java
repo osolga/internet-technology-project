@@ -19,7 +19,7 @@ public class MenuItem {
     private Double price;
     @ManyToOne
     @JsonIgnore
-    private Order order;
+    private BarOrder barOrder;
 
     public Long getId() {return id;}
 
@@ -37,7 +37,7 @@ public class MenuItem {
 
     public void setPrice(Double price) {this.price = price;}
 
-    public Order getOrder() {return order;}
+    public BarOrder getOrder() {return barOrder;}
 
-    public void setOrder(Order order) {this.order = order;}
+    public void setOrder(BarOrder barOrder) {this.barOrder = barOrder;}
 }
