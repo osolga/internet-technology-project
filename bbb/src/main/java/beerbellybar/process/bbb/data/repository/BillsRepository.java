@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BillsRepository extends JpaRepository<Bills, Long> {
-    Bills findbyId(Long Id);
 }

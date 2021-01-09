@@ -29,11 +29,15 @@ public class ReservationService {
 
     public Reservation editReservation(@Valid Reservation reservation) throws Exception {
         if (reservation.getId() == null) {
-            if (reservationRepository.findByIdNotInReservationAndReservationTime(reservation.getBarTable().getId(), reservation.getReservationTime()) == null) {
+            if (reservationRepository.findByReservationTimeAndCustomerId(reservation.getReservationTime(), customerService.getCurrentCustomer().getId()) == null) {
                 reservation.setCustomer(customerService.getCurrentCustomer());
-                return reservationRepository.save(reservation);
+                if (barTableRepository.findByReservationReservationTimeNot(reservation.getReservationTime()) != null) {
+                    reservation.setBarTable(barTableRepository.findByReservationReservationTimeNot(reservation.getReservationTime()).get(0));
+                    return reservationRepository.save(reservation);
+                }
+                throw new Exception("Reservation not possible there are no free tables this day.");
             }
-            throw new Exception("Reservation not possible there are no free tables.");
+            throw new Exception("Reservation not possible you already have a reservation that day.");
         }
         throw new Exception("Reservation not possible there are no free tables.");
     }
