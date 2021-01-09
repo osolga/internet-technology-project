@@ -19,7 +19,7 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
     @Autowired
-    Validator  validator;
+    Validator validator;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
