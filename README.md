@@ -1,7 +1,6 @@
 # Internet-technology-project
 Bear Belly Bar
 -----------------------------
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 FT2a Group 1
 
