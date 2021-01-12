@@ -6,16 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="internet-technology-project" />
         <module name="bbb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bbb" target="14" />
+      <module name="internet-technology-project" target="14" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bbb" options="-parameters" />
+      <module name="internet-technology-project" options="-parameters" />
     </option>
   </component>
 </project>
